@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    private(set) var coordinator: MainCoordinator!
+    private(set) var navController: UINavigationController!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setupCoordinator()
+        
+        setupWindow()
+        
         return true
     }
 
@@ -43,4 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
+//MARK: - Private functions
+private extension AppDelegate {
+    func setupCoordinator() {
+        navController = UINavigationController()
+        coordinator = MainCoordinator(with: navController)
+        coordinator.start()
+    }
+    
+    func setupWindow() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+    }
+}
