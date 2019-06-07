@@ -17,9 +17,12 @@ class CarDetailViewModelNameModelItem : CarDetailViewModelItem {
         return Constants.UI.CarDetailScreen.SectionTitles.model
     }
     
+    var textValue: String
+    
     var modelName: String
     
     init(modelName: String) {
+        self.textValue = modelName
         self.modelName = modelName
     }
 }

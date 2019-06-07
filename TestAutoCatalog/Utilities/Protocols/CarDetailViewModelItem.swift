@@ -12,6 +12,7 @@ protocol CarDetailViewModelItem {
     var type: CarDetailViewModelItemType { get }
     var numberOfRows: Int { get }
     var title: String { get }
+    var textValue: String { get }
 }
 
 extension CarDetailViewModelItem {

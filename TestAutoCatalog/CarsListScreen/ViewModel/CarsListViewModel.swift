@@ -14,7 +14,6 @@ struct CarViewModel {
     let modelName: String
     let year: Date
     
-    
     init(with car: CarModel) {
         modelName = car.modelName
         year = car.year
@@ -29,6 +28,7 @@ class CarsListViewModel {
         case empty
         case populated([CarViewModel])
     }
+    
     let dataService: CarDataService!
     var state: State {
         didSet {

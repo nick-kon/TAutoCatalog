@@ -9,7 +9,7 @@
 import Foundation
 
 extension Date {
-    func getYearAsString() -> String {
+    func getYearComponentAsString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter.string(from: self)

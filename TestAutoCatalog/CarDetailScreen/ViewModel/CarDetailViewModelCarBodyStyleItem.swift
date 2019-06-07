@@ -17,6 +17,8 @@ class CarDetailViewModelCarBodyStyleItem: CarDetailViewModelItem {
         return Constants.UI.CarDetailScreen.SectionTitles.carType
     }
     
+    var textValue: String
+    
     var carBodyStyle: String
     
     init(carBodyStyle: CarBodyStyle) {
@@ -46,5 +48,6 @@ class CarDetailViewModelCarBodyStyleItem: CarDetailViewModelItem {
         case .wagon:
             self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.wagon
         }
+        textValue = self.carBodyStyle
     }
 }

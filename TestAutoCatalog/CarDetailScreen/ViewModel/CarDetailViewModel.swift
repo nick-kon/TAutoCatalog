@@ -15,6 +15,7 @@ enum CarDetailViewModelItemType {
     case carType
 }
 class CarDetailViewModel {
+    
     var items = [CarDetailViewModelItem]()
     
     init(car: CarModel) {
@@ -28,6 +29,11 @@ class CarDetailViewModel {
         let manufacturerItem = CarDetailViewModelManufacturerItem(manufacturer: car.manufacturer)
         items.append(manufacturerItem)
         
+        let carClassItem = CarDetailViewModelCarClassItem(carClass: car.carClass)
+        items.append(carClassItem)
+        
+        let carTypeItem = CarDetailViewModelCarBodyStyleItem(carBodyStyle: car.bodyStyle)
+        items.append(carTypeItem)
     }
 }
 

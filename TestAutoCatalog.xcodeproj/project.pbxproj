@@ -11,6 +11,10 @@
 		9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9534660922AA39DE00A0503F /* Assets.xcassets */; };
 		9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9534660B22AA39DE00A0503F /* LaunchScreen.storyboard */; };
 		9534661822AA39DE00A0503F /* TestAutoCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534661722AA39DE00A0503F /* TestAutoCatalogTests.swift */; };
+		956AAB0922AAC9A30005A6F4 /* CarDetailLabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956AAB0722AAC9A30005A6F4 /* CarDetailLabelViewCell.swift */; };
+		956AAB0A22AAC9A30005A6F4 /* CarDetailLabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956AAB0822AAC9A30005A6F4 /* CarDetailLabelViewCell.xib */; };
+		956AAB0D22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956AAB0B22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift */; };
+		956AAB0E22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956AAB0C22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib */; };
 		95A5BBBC22AA3E0B004CC7CE /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBB22AA3E0B004CC7CE /* LinkedList.swift */; };
 		95A5BBBE22AA3E4D004CC7CE /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBD22AA3E4D004CC7CE /* CarModel.swift */; };
 		95A5BBC022AA5149004CC7CE /* CarDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBF22AA5149004CC7CE /* CarDataService.swift */; };
@@ -55,6 +59,10 @@
 		9534661322AA39DE00A0503F /* TestAutoCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutoCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9534661722AA39DE00A0503F /* TestAutoCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAutoCatalogTests.swift; sourceTree = "<group>"; };
 		9534661922AA39DE00A0503F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		956AAB0722AAC9A30005A6F4 /* CarDetailLabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailLabelViewCell.swift; sourceTree = "<group>"; };
+		956AAB0822AAC9A30005A6F4 /* CarDetailLabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDetailLabelViewCell.xib; sourceTree = "<group>"; };
+		956AAB0B22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailTextfieldViewCell.swift; sourceTree = "<group>"; };
+		956AAB0C22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDetailTextfieldViewCell.xib; sourceTree = "<group>"; };
 		95A5BBBB22AA3E0B004CC7CE /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		95A5BBBD22AA3E4D004CC7CE /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		95A5BBBF22AA5149004CC7CE /* CarDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataService.swift; sourceTree = "<group>"; };
@@ -238,6 +246,10 @@
 		95A5BBE122AA8A75004CC7CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				956AAB0722AAC9A30005A6F4 /* CarDetailLabelViewCell.swift */,
+				956AAB0822AAC9A30005A6F4 /* CarDetailLabelViewCell.xib */,
+				956AAB0B22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift */,
+				956AAB0C22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,8 +349,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A5BBE022AA7D98004CC7CE /* CarDetailViewController.storyboard in Resources */,
+				956AAB0A22AAC9A30005A6F4 /* CarDetailLabelViewCell.xib in Resources */,
 				95A5BBCD22AA5ADB004CC7CE /* CarsListScreenViewController.storyboard in Resources */,
 				9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */,
+				956AAB0E22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib in Resources */,
 				9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,11 +373,13 @@
 			files = (
 				95A5BBC922AA58B3004CC7CE /* MainCoordinator.swift in Sources */,
 				95A5BBE822AA8DB2004CC7CE /* CarDetailViewModelNameModelItem.swift in Sources */,
+				956AAB0922AAC9A30005A6F4 /* CarDetailLabelViewCell.swift in Sources */,
 				95A5BBBE22AA3E4D004CC7CE /* CarModel.swift in Sources */,
 				95A5BBD722AA6889004CC7CE /* UITableViewCellExtensions.swift in Sources */,
 				95A5BBD322AA6840004CC7CE /* CarsListCell.swift in Sources */,
 				95A5BBBC22AA3E0B004CC7CE /* LinkedList.swift in Sources */,
 				95A5BBE422AA8AB0004CC7CE /* CarDetailViewModel.swift in Sources */,
+				956AAB0D22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift in Sources */,
 				95A5BBC022AA5149004CC7CE /* CarDataService.swift in Sources */,
 				95A5BBF022AA8FA8004CC7CE /* CarDetailViewModelCarBodyStyleItem.swift in Sources */,
 				9534660322AA39B600A0503F /* AppDelegate.swift in Sources */,

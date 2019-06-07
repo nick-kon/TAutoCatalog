@@ -1,5 +1,5 @@
 //
-//  CarsListCell.swift
+//  CarDetailLabelViewCell.swift
 //  TestAutoCatalog
 //
 //  Created by nic on 07/06/2019.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class CarsListCell: UITableViewCell {
+class CarDetailLabelViewCell: UITableViewCell {
 
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var modelNameLabel: UILabel!
+    @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,8 +22,8 @@ class CarsListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with car: CarViewModel) {
-        yearLabel.text = car.year.getYearComponentAsString()
-        modelNameLabel.text = car.modelName
+    func configure(with item: CarDetailViewModelItem) {
+        label.text = item.textValue
     }
+    
 }

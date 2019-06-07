@@ -17,9 +17,12 @@ class CarDetailViewModelYearItem: CarDetailViewModelItem {
         return Constants.UI.CarDetailScreen.SectionTitles.year
     }
     
+    var textValue: String
+    
     var year: Date
     
     init(year: Date) {
+        self.textValue = year.getYearComponentAsString()
         self.year = year
     }
 }

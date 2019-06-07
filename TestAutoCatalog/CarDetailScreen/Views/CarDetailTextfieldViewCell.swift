@@ -1,17 +1,16 @@
 //
-//  CarsListCell.swift
+//  CarDetailTextfieldViewCell.swift
 //  TestAutoCatalog
 //
-//  Created by nic on 07/06/2019.
+//  Created by nic on 08/06/2019.
 //  Copyright © 2019 nic. All rights reserved.
 //
 
 import UIKit
 
-class CarsListCell: UITableViewCell {
+class CarDetailTextfieldViewCell: UITableViewCell {
 
-    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var modelNameLabel: UILabel!
+    @IBOutlet weak var textfield: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,8 +22,9 @@ class CarsListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with car: CarViewModel) {
-        yearLabel.text = car.year.getYearComponentAsString()
-        modelNameLabel.text = car.modelName
+    func configure(with item: CarDetailViewModelItem) {
+        textfield.text = item.textValue
+        textfield.becomeFirstResponder()
     }
+    
 }

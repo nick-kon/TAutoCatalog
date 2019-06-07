@@ -17,8 +17,11 @@ class CarDetailViewModelManufacturerItem: CarDetailViewModelItem {
         return Constants.UI.CarDetailScreen.SectionTitles.manufacturer
     }
     
+    var textValue: String
+    
     var manufacturer: String
     init(manufacturer: String) {
+        self.textValue = manufacturer
         self.manufacturer = manufacturer
     }
 }

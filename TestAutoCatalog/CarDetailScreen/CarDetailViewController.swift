@@ -25,6 +25,13 @@ class CarDetailViewController: UIViewController, Storyboarded {
 //MARK: - Private functions
 private extension CarDetailViewController {
     func setupTableView() {
+        
+        let labelCellNib = UINib(nibName: CarDetailLabelViewCell.identifier, bundle: Bundle.main)
+        tableView.register(labelCellNib, forCellReuseIdentifier: CarDetailLabelViewCell.identifier)
+        
+        let textfieldCellNib = UINib(nibName: CarDetailTextfieldViewCell.identifier, bundle: Bundle.main)
+        tableView.register(textfieldCellNib, forCellReuseIdentifier: CarDetailTextfieldViewCell.identifier)
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
@@ -43,9 +50,30 @@ extension CarDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let item = viewModel.items[indexPath.section]
         
-        return cell
+
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailTextfieldViewCell.identifier, for: indexPath) as? CarDetailTextfieldViewCell {
+            cell.configure(with: item)
+            return cell
+        }
+
+        
+//        if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailLabelViewCell.identifier, for: indexPath) as? CarDetailLabelViewCell {
+//            cell.configure(with: item)
+//            return cell
+//        }
+//        switch item.type {
+//        case .modelName:
+//            if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailLabelViewCell.identifier, for: indexPath) as? CarDetailLabelViewCell {
+//                cell.configure(with: item)
+//            }
+//        case .year:
+//
+//
+//        }
+        return UITableViewCell()
+
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
