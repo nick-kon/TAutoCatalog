@@ -13,8 +13,9 @@
 		9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9534660922AA39DE00A0503F /* Assets.xcassets */; };
 		9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9534660B22AA39DE00A0503F /* LaunchScreen.storyboard */; };
 		9534661822AA39DE00A0503F /* TestAutoCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534661722AA39DE00A0503F /* TestAutoCatalogTests.swift */; };
-		95A5BBBC22AA3E0B004CC7CE /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBB22AA3E0B004CC7CE /* LocalDataStore.swift */; };
+		95A5BBBC22AA3E0B004CC7CE /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBB22AA3E0B004CC7CE /* LinkedList.swift */; };
 		95A5BBBE22AA3E4D004CC7CE /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBD22AA3E4D004CC7CE /* CarModel.swift */; };
+		95A5BBC022AA5149004CC7CE /* CarDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBF22AA5149004CC7CE /* CarDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,9 @@
 		9534661322AA39DE00A0503F /* TestAutoCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutoCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9534661722AA39DE00A0503F /* TestAutoCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAutoCatalogTests.swift; sourceTree = "<group>"; };
 		9534661922AA39DE00A0503F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95A5BBBB22AA3E0B004CC7CE /* LocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
+		95A5BBBB22AA3E0B004CC7CE /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		95A5BBBD22AA3E4D004CC7CE /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		95A5BBBF22AA5149004CC7CE /* CarDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +131,8 @@
 		95A5BBBA22AA3DD2004CC7CE /* LocalDataStore */ = {
 			isa = PBXGroup;
 			children = (
-				95A5BBBB22AA3E0B004CC7CE /* LocalDataStore.swift */,
+				95A5BBBB22AA3E0B004CC7CE /* LinkedList.swift */,
+				95A5BBBF22AA5149004CC7CE /* CarDataService.swift */,
 			);
 			path = LocalDataStore;
 			sourceTree = "<group>";
@@ -236,7 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A5BBBE22AA3E4D004CC7CE /* CarModel.swift in Sources */,
-				95A5BBBC22AA3E0B004CC7CE /* LocalDataStore.swift in Sources */,
+				95A5BBBC22AA3E0B004CC7CE /* LinkedList.swift in Sources */,
+				95A5BBC022AA5149004CC7CE /* CarDataService.swift in Sources */,
 				9534660522AA39B600A0503F /* ViewController.swift in Sources */,
 				9534660322AA39B600A0503F /* AppDelegate.swift in Sources */,
 			);
