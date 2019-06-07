@@ -14,6 +14,7 @@ struct CarViewModel {
     let modelName: String
     let year: Date
     
+    
     init(with car: CarModel) {
         modelName = car.modelName
         year = car.year
@@ -28,7 +29,7 @@ class CarsListViewModel {
         case empty
         case populated([CarViewModel])
     }
-    
+    let dataService: CarDataService!
     var state: State {
         didSet {
             switch state {
@@ -40,8 +41,6 @@ class CarsListViewModel {
         }
     }
     
-    var dataService: CarDataService!
-    
     var currentCars: [CarViewModel] {
         switch state {
         case .populated(let cars):
@@ -51,19 +50,18 @@ class CarsListViewModel {
         }
     }
     
-    init() {
+    init(with dataService: CarDataService) {
         state = .loading
-        dataService = CarDataService()
+        self.dataService = dataService
         fetchData()
     }
-    
 }
 
 //MARK: - Private functions
 private extension CarsListViewModel {
     func fetchData() {
         
-        dataService.loadMockData()
+       dataService.loadMockData()
         
         var result = [CarViewModel]()
         for i in 0 ..< dataService.count {

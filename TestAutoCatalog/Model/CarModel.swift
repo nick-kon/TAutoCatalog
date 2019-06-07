@@ -22,7 +22,7 @@ enum CarClass: String, Codable {
     case s = "sportCoupe"   // sport coupe
 }
 
-enum CarType: String, Codable {
+enum CarBodyStyle: String, Codable {
     case suv = "suv"
     case truck = "truck"
     case sedan = "sedan"
@@ -40,6 +40,7 @@ enum CarType: String, Codable {
 struct CarModel: Codable {
     var modelName: String
     var year: Date
-    var make: String
-    
+    var manufacturer: String
+    var bodyStyle: CarBodyStyle
+    var carClass: CarClass
 }

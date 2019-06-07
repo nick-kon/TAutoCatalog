@@ -18,7 +18,6 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        carsViewModel = CarsListViewModel()
        
         setupTableView()
         
@@ -60,5 +59,7 @@ extension CarsListScreenViewController: UITableViewDataSource {
 }
 //MARK: - UITableViewDelegate
 extension CarsListScreenViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator.showDetailForCar(at: indexPath.row)
+    }
 }

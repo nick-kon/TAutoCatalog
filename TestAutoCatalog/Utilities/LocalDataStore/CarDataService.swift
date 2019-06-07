@@ -43,9 +43,13 @@ extension CarDataService {
     
     func loadMockData() {
         
-        let car1 = CarModel(modelName: "Focus", year: Date(), make: "Ford")
-        let car2 = CarModel(modelName: "Camry", year: Date(), make: "Toyota")
-        let car3 = CarModel(modelName: "Ram", year: Date(), make: "Dodge")
+        
+      //  let car1 = CarModel(modelName: "Focus", year: Date(), manufacturer: "Ford", car)
+      //  let car2 = CarModel(modelName: "Camry", year: Date(), manufacturer: "Toyota")
+      //  let car3 = CarModel(modelName: "Ram", year: Date(), manufacturer: "Dodge")
+        let car1 = CarModel(modelName: "Focus", year: Date(), manufacturer: "Ford", bodyStyle: .sedan, carClass: .c)
+        let car2 = CarModel(modelName: "Camry", year: Date(), manufacturer: "Toyota", bodyStyle: .crossover, carClass: .d)
+        let car3 = CarModel(modelName: "Ram", year: Date(), manufacturer: "Dodge", bodyStyle: .truck, carClass: .f)
         
         cars.append(car1)
         cars.append(car2)
