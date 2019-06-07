@@ -17,7 +17,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        
+        let vc = CarsListScreenViewController.instantiate()
+        navigationController.pushViewController(vc, animated: false)
     }
     
 }
