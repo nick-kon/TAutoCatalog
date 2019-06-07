@@ -14,39 +14,56 @@ enum ListError: Error {
 }
 
 
-class ListNode {
+class ListNode<T> {
     let id: UUID
-    var carInfo: CarModel!
-    var pNext: ListNode?
+    var value: T
+    var pNext: ListNode<T>?
     
-    init(car: CarModel) {
+    init(value: T) {
         id = UUID()
-        carInfo = car
+        self.value = value
     }
     
 }
 
-class LinkedList{
-    private var head: ListNode?
+class LinkedList<T>{
+    private var head: ListNode<T>?
     private(set) var count: Int = 0
-    
+
     //MARK: - API
+
+    func append(_ value: T) {
+       let newNode = ListNode(value: value)
+
+        if head == nil {
+            head = newNode
+        } else {
+            var iterator = head
+            
+            while iterator?.pNext != nil{
+                iterator = iterator?.pNext
+            }
+            
+            iterator!.pNext = newNode
+        }
+        count += 1
+    }
     
-    func append(_ node: ListNode) {
+    func append(_ node: ListNode<T>) {
     
       if head == nil {
             head = node
         } else {
-            var iterator = head
-        
-            while iterator?.pNext != nil{
-                iterator = iterator?.pNext
-            }
-    
-            iterator!.pNext = node
+            let lastNode = try! getNode(at: count - 1)
+            lastNode?.pNext = node
         }
         
         count += 1
+    }
+    
+    func update(at index: Int, with value: T) {
+        let updatedNode = try! getNode(at: index)
+        updatedNode?.value = value
     }
     
     func delete(at index: Int) throws {
@@ -56,22 +73,26 @@ class LinkedList{
         if index == 0 {
             head = nil
         } else {
-            let prevNode = try! get(at: index - 1)
-            let deletedNode = try! get(at: index)
+            let prevNode = try! getNode(at: index - 1)
+            let deletedNode = try! getNode(at: index)
             prevNode!.pNext = deletedNode!.pNext
         }
         count -= 1
     }
     
-    func get(at index: Int) throws -> ListNode? {
-        guard index < count else { throw ListError.IndexOutOfRange  }
+    func getValue(at index: Int) throws -> T? {
+        let node = try! getNode(at: index)
+        return node?.value
+    }
+    
+//MARK: - Private functions
+private func getNode(at index: Int) throws -> ListNode<T>? {
+        guard index < count, index >= 0 else { throw ListError.IndexOutOfRange  }
         var iterator = head
         for _ in 0 ..< index {
             iterator = iterator?.pNext
         }
         return iterator
     }
-    
-    
-    
 }
+
