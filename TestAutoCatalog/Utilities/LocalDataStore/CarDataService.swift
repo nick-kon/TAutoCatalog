@@ -50,32 +50,36 @@ extension CarDataService {
         cars.append(car1)
         cars.append(car2)
         cars.append(car3)
-        print("added")
-        for i in 0 ..< cars.count {
-            let car = try! cars.getValue(at: i)
-            print(car?.modelName)
-        }
-        
-        print("deleted at 1")
-        try! cars.delete(at: 1)
-        
-        for i in 0 ..< cars.count {
-            let car = try! cars.getValue(at: i)
-            print(car?.modelName)
-        }
-        
-        print("deleted at 1")
-        try! cars.delete(at: 1)
-
-        for i in 0 ..< cars.count {
-            let car = try! cars.getValue(at: i)
-            print(car?.modelName)
-        }
+//        print("added")
+//        for i in 0 ..< cars.count {
+//            let car = try! cars.getValue(at: i)
+//            print(car?.modelName)
+//        }
+//        
+//        print("deleted at 1")
+//        try! cars.delete(at: 1)
+//
+//        for i in 0 ..< cars.count {
+//            let car = try! cars.getValue(at: i)
+//            print(car?.modelName)
+//        }
+//
+//        print("deleted at 1")
+//        try! cars.delete(at: 1)
+//
+//        for i in 0 ..< cars.count {
+//            let car = try! cars.getValue(at: i)
+//            print(car?.modelName)
+//        }
     }
 
-    func load() {
-        
-    }
+//    func load(completion: @escaping (Result<LinkedList<CarModel>, Error>) -> Void) {
+//        
+//        loadMockData()
+//
+//        completion(.success(cars))
+//
+//    }
     
     func export() {
         

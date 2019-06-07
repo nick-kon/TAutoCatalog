@@ -10,6 +10,8 @@ import UIKit
 
 class CarsListCell: UITableViewCell {
 
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var modelNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,8 @@ class CarsListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(with car: CarViewModel) {
+        yearLabel.text = car.year.getYearAsString()
+        modelNameLabel.text = car.modelName
+    }
 }

@@ -12,13 +12,22 @@ import UIKit
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
     
+    
     init(with navController: UINavigationController) {
         self.navigationController = navController
     }
     
     func start() {
         let vc = CarsListScreenViewController.instantiate()
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func addCar() {
+        
+        let vc = AddCarViewController.instantiate()
+        navigationController.pushViewController(vc, animated: true)
+        
     }
     
 }

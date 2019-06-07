@@ -29,8 +29,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label storyboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWE-Mk-enS">
-                                                    <rect key="frame" x="47" y="30" width="99" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nJ-4e-0PG">
+                                                    <rect key="frame" x="16" y="30" width="169" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNm-5N-04D">
+                                                    <rect key="frame" x="304" y="30" width="84" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -38,13 +45,30 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="modelNameLabel" destination="1nJ-4e-0PG" id="8tl-wi-9gi"/>
+                                            <outlet property="yearLabel" destination="rNm-5N-04D" id="04h-57-q8O"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-TW-xpc">
+                                <rect key="frame" x="319" y="767" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="RyW-hJ-k92"/>
+                                    <constraint firstAttribute="width" constant="65" id="TsK-Ps-sUl"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="N5t-aD-8Zd" eventType="touchUpInside" id="N2w-gT-roV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Rzg-us-xsV" firstAttribute="bottom" secondItem="MgQ-TW-xpc" secondAttribute="bottom" constant="30" id="GO8-CB-ICw"/>
                             <constraint firstItem="Rzg-us-xsV" firstAttribute="trailing" secondItem="Fjy-wc-wax" secondAttribute="trailing" id="NEH-MB-eua"/>
+                            <constraint firstItem="MgQ-TW-xpc" firstAttribute="trailing" secondItem="Rzg-us-xsV" secondAttribute="trailing" constant="-30" id="OHg-ad-aNH"/>
                             <constraint firstItem="Fjy-wc-wax" firstAttribute="leading" secondItem="Rzg-us-xsV" secondAttribute="leading" id="jFg-TP-Ezo"/>
                             <constraint firstItem="Fjy-wc-wax" firstAttribute="top" secondItem="Rzg-us-xsV" secondAttribute="top" id="kMv-LB-YRq"/>
                             <constraint firstItem="Rzg-us-xsV" firstAttribute="bottom" secondItem="Fjy-wc-wax" secondAttribute="bottom" id="pOi-Vo-6vW"/>
