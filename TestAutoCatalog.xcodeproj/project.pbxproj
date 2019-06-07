@@ -22,6 +22,10 @@
 		95A5BBD022AA66F6004CC7CE /* CarsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBCF22AA66F6004CC7CE /* CarsListViewModel.swift */; };
 		95A5BBD322AA6840004CC7CE /* CarsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBD122AA6840004CC7CE /* CarsListCell.swift */; };
 		95A5BBD722AA6889004CC7CE /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBD622AA6889004CC7CE /* UITableViewCellExtensions.swift */; };
+		95A5BBD922AA736D004CC7CE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBD822AA736D004CC7CE /* Box.swift */; };
+		95A5BBDB22AA7AE0004CC7CE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBDA22AA7AE0004CC7CE /* DateExtensions.swift */; };
+		95A5BBDE22AA7D84004CC7CE /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBDD22AA7D84004CC7CE /* AddCarViewController.swift */; };
+		95A5BBE022AA7D98004CC7CE /* AddCarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A5BBDF22AA7D98004CC7CE /* AddCarViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		95A5BBCF22AA66F6004CC7CE /* CarsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListViewModel.swift; sourceTree = "<group>"; };
 		95A5BBD122AA6840004CC7CE /* CarsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListCell.swift; sourceTree = "<group>"; };
 		95A5BBD622AA6889004CC7CE /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
+		95A5BBD822AA736D004CC7CE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		95A5BBDA22AA7AE0004CC7CE /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		95A5BBDD22AA7D84004CC7CE /* AddCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
+		95A5BBDF22AA7D98004CC7CE /* AddCarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddCarViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		9534660122AA39B600A0503F /* TestAutoCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				95A5BBDC22AA7D5C004CC7CE /* AddCarScreen */,
 				95A5BBC222AA5735004CC7CE /* CarsListScreen */,
 				95A5BBB922AA3DCC004CC7CE /* Model */,
 				95A5BBB822AA3D79004CC7CE /* Resources */,
@@ -122,6 +131,7 @@
 				95A5BBD522AA6875004CC7CE /* Extensions */,
 				95A5BBC322AA578D004CC7CE /* Protocols */,
 				95A5BBBA22AA3DD2004CC7CE /* LocalDataStore */,
+				95A5BBD822AA736D004CC7CE /* Box.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -191,8 +201,18 @@
 			isa = PBXGroup;
 			children = (
 				95A5BBD622AA6889004CC7CE /* UITableViewCellExtensions.swift */,
+				95A5BBDA22AA7AE0004CC7CE /* DateExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95A5BBDC22AA7D5C004CC7CE /* AddCarScreen */ = {
+			isa = PBXGroup;
+			children = (
+				95A5BBDD22AA7D84004CC7CE /* AddCarViewController.swift */,
+				95A5BBDF22AA7D98004CC7CE /* AddCarViewController.storyboard */,
+			);
+			path = AddCarScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A5BBE022AA7D98004CC7CE /* AddCarViewController.storyboard in Resources */,
 				95A5BBCD22AA5ADB004CC7CE /* CarsListScreenViewController.storyboard in Resources */,
 				9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */,
 				9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */,
@@ -303,10 +324,13 @@
 				95A5BBBC22AA3E0B004CC7CE /* LinkedList.swift in Sources */,
 				95A5BBC022AA5149004CC7CE /* CarDataService.swift in Sources */,
 				9534660322AA39B600A0503F /* AppDelegate.swift in Sources */,
+				95A5BBDE22AA7D84004CC7CE /* AddCarViewController.swift in Sources */,
 				95A5BBCB22AA5A9C004CC7CE /* CarsListScreenViewController.swift in Sources */,
 				95A5BBC522AA57A3004CC7CE /* Storyboarded.swift in Sources */,
+				95A5BBD922AA736D004CC7CE /* Box.swift in Sources */,
 				95A5BBC722AA5869004CC7CE /* Coordinator.swift in Sources */,
 				95A5BBD022AA66F6004CC7CE /* CarsListViewModel.swift in Sources */,
+				95A5BBDB22AA7AE0004CC7CE /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
