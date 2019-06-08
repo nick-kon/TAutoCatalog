@@ -19,7 +19,11 @@ class CarDetailViewModelYearItem: CarDetailViewModelItem {
     
     var textValue: String
     
-    var year: Date
+    var year: Date {
+        didSet {
+            textValue = year.getYearComponentAsString()
+        }
+    }
     
     init(year: Date) {
         self.textValue = year.getYearComponentAsString()

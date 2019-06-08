@@ -91,7 +91,19 @@ class CarDetailViewModel {
         }
         
         state = .endEditing(index)
+    }
+    
+    func didSelectYear(_ year: Int) {
+
+        guard let index = editingItemIndex else { return }
+        guard let yearItem = items[index] as? CarDetailViewModelYearItem else { return }
         
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        if dateComponents.isValidDate(in: Calendar.current) {
+            yearItem.year = Calendar.current.date(from: dateComponents)!
+            state = .endEditing(index)
+        }
     }
     
 }

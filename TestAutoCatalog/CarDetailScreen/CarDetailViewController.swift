@@ -100,6 +100,7 @@ extension CarDetailViewController: UITableViewDataSource {
             switch item.type {
             case .year:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailDatePickerViewCell.identifier, for: indexPath) as? CarDetailDatePickerViewCell {
+                    cell.delegate = self
                     cell.configure(with: item)
                     return cell
                 }
@@ -165,5 +166,12 @@ extension CarDetailViewController: UITableViewDelegate {
 extension CarDetailViewController: TableViewPickerDelegate {
     func didSelectEnumValue(_ value: StoredAsEnum) {
         viewModel.didSelectEnumValue(value)
+    }
+}
+
+//MARK: - YearPickerDelegate
+extension CarDetailViewController: YearPickerDelegate {
+    func didSelectYear(_ year: Int) {
+        viewModel.didSelectYear(year)
     }
 }

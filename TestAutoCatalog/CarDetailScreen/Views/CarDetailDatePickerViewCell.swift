@@ -12,7 +12,8 @@ class CarDetailDatePickerViewCell: UITableViewCell {
 
     @IBOutlet weak var datePicker: UIPickerView!
     private var years = [Int]()
-    var getSelectedYear: ((Int) -> Void)?
+    
+    weak var delegate: YearPickerDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,7 +63,6 @@ extension CarDetailDatePickerViewCell: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("did select date: \(years[row])")
-        getSelectedYear?(years[row])
+        delegate?.didSelectYear(years[row])
     }
 }

@@ -14,6 +14,7 @@
 		952E18AB22ABB59C00980910 /* PopupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18A922ABB59C00980910 /* PopupTableViewCell.swift */; };
 		952E18AC22ABB59C00980910 /* PopupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952E18AA22ABB59C00980910 /* PopupTableViewCell.xib */; };
 		952E18AE22ABFD0E00980910 /* TableViewPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18AD22ABFD0E00980910 /* TableViewPickerDelegate.swift */; };
+		952E18B022AC241500980910 /* YearPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18AF22AC241500980910 /* YearPickerDelegate.swift */; };
 		9534660322AA39B600A0503F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534660222AA39B600A0503F /* AppDelegate.swift */; };
 		9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9534660922AA39DE00A0503F /* Assets.xcassets */; };
 		9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9534660B22AA39DE00A0503F /* LaunchScreen.storyboard */; };
@@ -67,6 +68,7 @@
 		952E18A922ABB59C00980910 /* PopupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTableViewCell.swift; sourceTree = "<group>"; };
 		952E18AA22ABB59C00980910 /* PopupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupTableViewCell.xib; sourceTree = "<group>"; };
 		952E18AD22ABFD0E00980910 /* TableViewPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPickerDelegate.swift; sourceTree = "<group>"; };
+		952E18AF22AC241500980910 /* YearPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerDelegate.swift; sourceTree = "<group>"; };
 		953465FF22AA39B600A0503F /* TestAutoCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAutoCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9534660222AA39B600A0503F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9534660922AA39DE00A0503F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				95A5BBE522AA8C9B004CC7CE /* CarDetailViewModelItem.swift */,
 				952E18A322AB7E5700980910 /* StoredAsEnum.swift */,
 				952E18AD22ABFD0E00980910 /* TableViewPickerDelegate.swift */,
+				952E18AF22AC241500980910 /* YearPickerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				95A5BBC722AA5869004CC7CE /* Coordinator.swift in Sources */,
 				95A5BBD022AA66F6004CC7CE /* CarsListViewModel.swift in Sources */,
 				952E18A022AB746900980910 /* PopupTableViewController.swift in Sources */,
+				952E18B022AC241500980910 /* YearPickerDelegate.swift in Sources */,
 				952E18A722AB828D00980910 /* PopupTableViewModel.swift in Sources */,
 				95A5BBDB22AA7AE0004CC7CE /* DateExtensions.swift in Sources */,
 				95A5BBEA22AA8E1A004CC7CE /* Constants.swift in Sources */,
