@@ -17,13 +17,17 @@ class CarDetailViewModelCarBodyStyleItem: CarDetailViewModelItem {
         return Constants.UI.CarDetailScreen.SectionTitles.carType
     }
     
-    var textValue: String
+    var textValue: String = ""
     
-    var carBodyStyle: CarBodyStyle
+    var carAttributeEnumValue: StoredAsEnum {
+        didSet {
+            textValue = carAttributeEnumValue.toString()
+        }
+    }
     
     init(carBodyStyle: CarBodyStyle) {
 
         textValue = carBodyStyle.toString()
-        self.carBodyStyle = carBodyStyle
+        self.carAttributeEnumValue = carBodyStyle
     }
 }

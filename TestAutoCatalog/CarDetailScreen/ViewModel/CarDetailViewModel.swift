@@ -19,6 +19,7 @@ class CarDetailViewModel {
     enum State {
         case normal
         case editing(Int)
+        case endEditing(Int)
         case adding
     }
     
@@ -31,10 +32,24 @@ class CarDetailViewModel {
             case .editing:
                 title.value = Constants.UI.CarDetailScreen.titleEdit
                 rightBarButtonTitle.value = Constants.UI.done
+            case .endEditing(let index):
+                state = .normal
+                reloadRow?(index)
             case .adding:
                 title.value = Constants.UI.CarDetailScreen.titleAdd
                 rightBarButtonTitle.value = Constants.UI.save
             }
+        }
+    }
+    
+    var reloadRow: ((Int) -> Void)?
+    
+    var editingItemIndex: Int? {
+        switch state {
+        case .editing(let index):
+            return index
+        default:
+            return nil
         }
     }
     
@@ -63,6 +78,21 @@ class CarDetailViewModel {
     
     var title: Box<String> = Box("")
     var rightBarButtonTitle: Box<String> = Box("")
+    
+    func didSelectEnumValue(_ value: StoredAsEnum) {
+        guard let index = editingItemIndex else { return }
+        
+        if let carClassItem = items[index] as? CarDetailViewModelCarClassItem {
+            carClassItem.carAttributeEnumValue = value
+        }
+        
+        if let carBodyStyleItem = items[index] as? CarDetailViewModelCarBodyStyleItem {
+            carBodyStyleItem.carAttributeEnumValue = value
+        }
+        
+        state = .endEditing(index)
+        
+    }
     
 }
 

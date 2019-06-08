@@ -19,11 +19,14 @@ class CarDetailViewModelCarClassItem: CarDetailViewModelItem {
     
     var textValue: String
     
-    var carClass: CarClass
+    var carAttributeEnumValue: StoredAsEnum {
+        didSet {
+            textValue = carAttributeEnumValue.toString()
+        }
+    }
     
     init(carClass: CarClass) {
-        
         textValue = carClass.toString()
-        self.carClass = carClass
+        self.carAttributeEnumValue = carClass
     }
 }

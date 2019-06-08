@@ -62,6 +62,7 @@ extension CarDetailDatePickerViewCell: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("did select date: \(years[row])")
         getSelectedYear?(years[row])
     }
 }

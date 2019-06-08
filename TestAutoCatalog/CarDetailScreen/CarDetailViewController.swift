@@ -64,6 +64,11 @@ private extension CarDetailViewController {
             self.rightBarButton.title = title
         }
         
+        viewModel.reloadRow = { (section) in
+            let indexSet = IndexSet(integer: section)
+            self.tableView.reloadSections(indexSet, with: .automatic)
+        }
+        
     }
     
     func editViewModelItem(at index: Int) {
@@ -98,21 +103,20 @@ extension CarDetailViewController: UITableViewDataSource {
                     cell.configure(with: item)
                     return cell
                 }
-            case .carClass:
+            case .carClass, .carType:
                 
                 let vc = PopupTableViewController.instantiate()
-                let classAttribute = item as! CarDetailViewModelCarClassItem
-                vc.carAttribute = classAttribute.carClass
-                present(vc, animated: true, completion: nil)
+                var carAttribute: StoredAsEnum
                 
-                if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailLabelViewCell.identifier, for: indexPath) as? CarDetailLabelViewCell {
-                    cell.configure(with: item)
-                    return cell
+                if let carClassItem = item as? CarDetailViewModelCarClassItem {
+                    carAttribute = carClassItem.carAttributeEnumValue
+                } else {
+                    let bodyStyleItem = item as! CarDetailViewModelCarBodyStyleItem
+                    carAttribute = bodyStyleItem.carAttributeEnumValue
                 }
-            case .carType:
-                let vc = PopupTableViewController.instantiate()
-                let typeAttribute = item as! CarDetailViewModelCarBodyStyleItem
-                vc.carAttribute = typeAttribute.carBodyStyle
+                
+                vc.carAttribute = carAttribute
+                vc.delegate = self
                 present(vc, animated: true, completion: nil)
                 
                 if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailLabelViewCell.identifier, for: indexPath) as? CarDetailLabelViewCell {
@@ -129,19 +133,7 @@ extension CarDetailViewController: UITableViewDataSource {
        default:
             return UITableViewCell()
         }
-        
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailLabelViewCell.identifier, for: indexPath) as? CarDetailLabelViewCell {
-//            cell.configure(with: item)
-//            return cell
-//        }
-//        switch item.type {
-//        case .modelName:
-//        case .year:
-//
-//
-//        }
         return UITableViewCell()
-
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -166,5 +158,12 @@ extension CarDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(actions: [])
+    }
+}
+
+//MARK: - TableViewPickerDelegate
+extension CarDetailViewController: TableViewPickerDelegate {
+    func didSelectEnumValue(_ value: StoredAsEnum) {
+        viewModel.didSelectEnumValue(value)
     }
 }
