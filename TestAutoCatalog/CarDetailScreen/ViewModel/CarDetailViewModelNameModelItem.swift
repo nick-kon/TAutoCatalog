@@ -19,10 +19,23 @@ class CarDetailViewModelNameModelItem : CarDetailViewModelItem {
     
     var textValue: String
     
-    var modelName: String
+    var modelName: String {
+        didSet {
+            textValue = modelName
+        }
+    }
     
     init(modelName: String) {
         self.textValue = modelName
         self.modelName = modelName
+    }
+    
+    func isValid(textValue: String) -> Bool {
+        
+        if textValue.count > 0  {
+          return true
+        }
+        
+        return false
     }
 }

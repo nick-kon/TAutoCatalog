@@ -106,6 +106,21 @@ class CarDetailViewModel {
         }
     }
     
+    func didEnterText(_ text: String) {
+        
+        guard let index = editingItemIndex else { return }
+        
+        if let modelNameItem = items[index] as? CarDetailViewModelNameModelItem {
+            modelNameItem.modelName = text
+        }
+        
+        if let manufacturerItem = items[index] as? CarDetailViewModelManufacturerItem {
+            manufacturerItem.manufacturer = text
+        }
+
+        state = .endEditing(index)
+    }
+    
 }
 
 

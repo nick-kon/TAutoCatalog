@@ -19,9 +19,20 @@ class CarDetailViewModelManufacturerItem: CarDetailViewModelItem {
     
     var textValue: String
     
-    var manufacturer: String
+    var manufacturer: String {
+        didSet {
+            textValue = manufacturer
+        }
+    }
     init(manufacturer: String) {
         self.textValue = manufacturer
         self.manufacturer = manufacturer
+    }
+    
+    func isValid(textValue: String) -> Bool {
+        if textValue.count > 0 {
+            return true
+        }
+        return false
     }
 }

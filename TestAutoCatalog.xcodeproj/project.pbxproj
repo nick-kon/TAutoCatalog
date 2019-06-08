@@ -15,6 +15,7 @@
 		952E18AC22ABB59C00980910 /* PopupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952E18AA22ABB59C00980910 /* PopupTableViewCell.xib */; };
 		952E18AE22ABFD0E00980910 /* TableViewPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18AD22ABFD0E00980910 /* TableViewPickerDelegate.swift */; };
 		952E18B022AC241500980910 /* YearPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18AF22AC241500980910 /* YearPickerDelegate.swift */; };
+		952E18B222AC370300980910 /* UITextfieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18B122AC370300980910 /* UITextfieldExtensions.swift */; };
 		9534660322AA39B600A0503F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534660222AA39B600A0503F /* AppDelegate.swift */; };
 		9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9534660922AA39DE00A0503F /* Assets.xcassets */; };
 		9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9534660B22AA39DE00A0503F /* LaunchScreen.storyboard */; };
@@ -69,6 +70,7 @@
 		952E18AA22ABB59C00980910 /* PopupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupTableViewCell.xib; sourceTree = "<group>"; };
 		952E18AD22ABFD0E00980910 /* TableViewPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPickerDelegate.swift; sourceTree = "<group>"; };
 		952E18AF22AC241500980910 /* YearPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerDelegate.swift; sourceTree = "<group>"; };
+		952E18B122AC370300980910 /* UITextfieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtensions.swift; sourceTree = "<group>"; };
 		953465FF22AA39B600A0503F /* TestAutoCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAutoCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9534660222AA39B600A0503F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9534660922AA39DE00A0503F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				95A5BBD622AA6889004CC7CE /* UITableViewCellExtensions.swift */,
 				95A5BBDA22AA7AE0004CC7CE /* DateExtensions.swift */,
+				952E18B122AC370300980910 /* UITextfieldExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				95A5BBF022AA8FA8004CC7CE /* CarDetailViewModelCarBodyStyleItem.swift in Sources */,
 				9534660322AA39B600A0503F /* AppDelegate.swift in Sources */,
 				952E18AB22ABB59C00980910 /* PopupTableViewCell.swift in Sources */,
+				952E18B222AC370300980910 /* UITextfieldExtensions.swift in Sources */,
 				95A5BBDE22AA7D84004CC7CE /* CarDetailViewController.swift in Sources */,
 				952E18A422AB7E5700980910 /* StoredAsEnum.swift in Sources */,
 				95A5BBEC22AA8F0E004CC7CE /* CarDetailViewModelYearItem.swift in Sources */,

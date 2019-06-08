@@ -127,7 +127,9 @@ extension CarDetailViewController: UITableViewDataSource {
                 
             default:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailTextfieldViewCell.identifier, for: indexPath) as? CarDetailTextfieldViewCell {
-                        cell.configure(with: item)
+                    
+                    cell.configure(with: item)
+                    cell.textfield.delegate = self
                     return cell
                 }
             }
@@ -174,4 +176,23 @@ extension CarDetailViewController: YearPickerDelegate {
     func didSelectYear(_ year: Int) {
         viewModel.didSelectYear(year)
     }
+}
+
+//MARK: - UITextFieldDelegate
+extension CarDetailViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     
+        if textField.validateForIsEmpty() {
+            return false
+        }
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        viewModel.didEnterText(textField.text!)
+    }
+    
 }
