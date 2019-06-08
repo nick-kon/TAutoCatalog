@@ -19,30 +19,11 @@ class CarDetailViewModelCarClassItem: CarDetailViewModelItem {
     
     var textValue: String
     
-    var carClassName: String
+    var carClass: CarClass
     
     init(carClass: CarClass) {
-        switch carClass {
-        case .a:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.a
-        case .b:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.b
-        case .c:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.c
-        case .d:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.d
-        case .e:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.e
-        case .f:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.f
-        case .j:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.j
-        case .m:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.m
-        case .s:
-            carClassName = Constants.UI.CarDetailScreen.CarClasses.s
-        }
         
-        textValue = carClassName
+        textValue = carClass.toString()
+        self.carClass = carClass
     }
 }

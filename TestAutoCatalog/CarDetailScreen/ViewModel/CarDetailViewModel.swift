@@ -16,6 +16,28 @@ enum CarDetailViewModelItemType {
 }
 class CarDetailViewModel {
     
+    enum State {
+        case normal
+        case editing(Int)
+        case adding
+    }
+    
+    var state: State {
+        didSet {
+            switch state {
+            case .normal:
+                title.value = Constants.UI.CarDetailScreen.titleDetail
+                rightBarButtonTitle.value = Constants.UI.edit
+            case .editing:
+                title.value = Constants.UI.CarDetailScreen.titleEdit
+                rightBarButtonTitle.value = Constants.UI.done
+            case .adding:
+                title.value = Constants.UI.CarDetailScreen.titleAdd
+                rightBarButtonTitle.value = Constants.UI.save
+            }
+        }
+    }
+    
     var items = [CarDetailViewModelItem]()
     
     init(car: CarModel) {
@@ -34,7 +56,14 @@ class CarDetailViewModel {
         
         let carTypeItem = CarDetailViewModelCarBodyStyleItem(carBodyStyle: car.bodyStyle)
         items.append(carTypeItem)
+        
+        state = .normal
     }
+    
+    
+    var title: Box<String> = Box("")
+    var rightBarButtonTitle: Box<String> = Box("")
+    
 }
 
 

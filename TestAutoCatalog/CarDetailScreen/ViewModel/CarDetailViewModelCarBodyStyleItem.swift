@@ -19,35 +19,11 @@ class CarDetailViewModelCarBodyStyleItem: CarDetailViewModelItem {
     
     var textValue: String
     
-    var carBodyStyle: String
+    var carBodyStyle: CarBodyStyle
     
     init(carBodyStyle: CarBodyStyle) {
-        switch carBodyStyle {
-        case .convertible:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.convertible
-        case .coupe:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.coupe
-        case .crossover:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.crossover
-        case .diesel:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.diesel
-        case .hybrid:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.hybrid
-        case .luxury:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.luxury
-        case .sedan:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.sedan
-        case .sport:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.sport
-        case .suv:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.suv
-        case .truck:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.truck
-        case .van:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.van
-        case .wagon:
-            self.carBodyStyle = Constants.UI.CarDetailScreen.CarBodyStyle.wagon
-        }
-        textValue = self.carBodyStyle
+
+        textValue = carBodyStyle.toString()
+        self.carBodyStyle = carBodyStyle
     }
 }
