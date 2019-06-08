@@ -53,6 +53,9 @@ class MainCoordinator: Coordinator {
         //prepare data
         let viewModel = CarDetailViewModel(car: dataService.getCar(at: index)!)
         vc.viewModel = viewModel
+      
+        vc.title = Constants.UI.CarDetailScreen.titleDetail
+        vc.rightBarButton.title = Constants.UI.edit
         
         navigationController.pushViewController(vc, animated: true)
     }
