@@ -43,6 +43,5 @@ class PopupViewModel {
                 mapToEnumValues.append(carClassInArr)
             }
         }
-        
     }
 }

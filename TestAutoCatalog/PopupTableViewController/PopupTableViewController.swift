@@ -18,6 +18,7 @@ class PopupTableViewController: UIViewController, Storyboarded {
     
     var carAttribute: StoredAsEnum!
     var viewModel: PopupViewModel!
+    weak var delegate: TableViewPickerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,14 +63,14 @@ extension PopupTableViewController: UITableViewDataSource {
         cell.configure(with: viewModel.items[indexPath.row])
         return cell
     }
-    
 }
 
 //MARK: - UITableViewDelegate
 extension PopupTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.selectItem(at: indexPath.row)
-        
+        delegate?.didSelectEnumValue(viewModel.selectedItemAsEnumValue)
+        dismiss(animated: true, completion: nil)
     }
     
 }
