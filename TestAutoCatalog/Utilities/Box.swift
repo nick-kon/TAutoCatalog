@@ -23,6 +23,11 @@ class Box<T> {
     
     func bind(listener: Listener?) {
         self.listener = listener
+//        listener?(value)
+    }
+    
+    func bindAndFire(listener: Listener?) {
+        self.listener = listener
         listener?(value)
     }
 }
