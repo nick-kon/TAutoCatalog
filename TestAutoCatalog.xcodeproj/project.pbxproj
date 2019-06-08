@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		952E18A022AB746900980910 /* PopupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E189F22AB746900980910 /* PopupTableViewController.swift */; };
+		952E18A222AB748100980910 /* PopupTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952E18A122AB748100980910 /* PopupTableViewController.storyboard */; };
+		952E18A422AB7E5700980910 /* StoredAsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18A322AB7E5700980910 /* StoredAsEnum.swift */; };
+		952E18A722AB828D00980910 /* PopupTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18A622AB828D00980910 /* PopupTableViewModel.swift */; };
+		952E18AB22ABB59C00980910 /* PopupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18A922ABB59C00980910 /* PopupTableViewCell.swift */; };
+		952E18AC22ABB59C00980910 /* PopupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952E18AA22ABB59C00980910 /* PopupTableViewCell.xib */; };
 		9534660322AA39B600A0503F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534660222AA39B600A0503F /* AppDelegate.swift */; };
 		9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9534660922AA39DE00A0503F /* Assets.xcassets */; };
 		9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9534660B22AA39DE00A0503F /* LaunchScreen.storyboard */; };
@@ -15,6 +21,8 @@
 		956AAB0A22AAC9A30005A6F4 /* CarDetailLabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956AAB0822AAC9A30005A6F4 /* CarDetailLabelViewCell.xib */; };
 		956AAB0D22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956AAB0B22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift */; };
 		956AAB0E22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956AAB0C22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib */; };
+		9596C83822AAFBB800FA35D1 /* CarDetailDatePickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596C83622AAFBB800FA35D1 /* CarDetailDatePickerViewCell.swift */; };
+		9596C83922AAFBB800FA35D1 /* CarDetailDatePickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9596C83722AAFBB800FA35D1 /* CarDetailDatePickerViewCell.xib */; };
 		95A5BBBC22AA3E0B004CC7CE /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBB22AA3E0B004CC7CE /* LinkedList.swift */; };
 		95A5BBBE22AA3E4D004CC7CE /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBD22AA3E4D004CC7CE /* CarModel.swift */; };
 		95A5BBC022AA5149004CC7CE /* CarDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBBF22AA5149004CC7CE /* CarDataService.swift */; };
@@ -51,6 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		952E189F22AB746900980910 /* PopupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTableViewController.swift; sourceTree = "<group>"; };
+		952E18A122AB748100980910 /* PopupTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupTableViewController.storyboard; sourceTree = "<group>"; };
+		952E18A322AB7E5700980910 /* StoredAsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredAsEnum.swift; sourceTree = "<group>"; };
+		952E18A622AB828D00980910 /* PopupTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTableViewModel.swift; sourceTree = "<group>"; };
+		952E18A922ABB59C00980910 /* PopupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTableViewCell.swift; sourceTree = "<group>"; };
+		952E18AA22ABB59C00980910 /* PopupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupTableViewCell.xib; sourceTree = "<group>"; };
 		953465FF22AA39B600A0503F /* TestAutoCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAutoCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9534660222AA39B600A0503F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9534660922AA39DE00A0503F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +77,8 @@
 		956AAB0822AAC9A30005A6F4 /* CarDetailLabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDetailLabelViewCell.xib; sourceTree = "<group>"; };
 		956AAB0B22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailTextfieldViewCell.swift; sourceTree = "<group>"; };
 		956AAB0C22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDetailTextfieldViewCell.xib; sourceTree = "<group>"; };
+		9596C83622AAFBB800FA35D1 /* CarDetailDatePickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailDatePickerViewCell.swift; sourceTree = "<group>"; };
+		9596C83722AAFBB800FA35D1 /* CarDetailDatePickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDetailDatePickerViewCell.xib; sourceTree = "<group>"; };
 		95A5BBBB22AA3E0B004CC7CE /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		95A5BBBD22AA3E4D004CC7CE /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		95A5BBBF22AA5149004CC7CE /* CarDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataService.swift; sourceTree = "<group>"; };
@@ -106,6 +122,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		952E189E22AB742800980910 /* PopupTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				952E18A822ABB55200980910 /* View */,
+				952E18A522AB826E00980910 /* ViewModel */,
+				952E189F22AB746900980910 /* PopupTableViewController.swift */,
+				952E18A122AB748100980910 /* PopupTableViewController.storyboard */,
+			);
+			path = PopupTableViewController;
+			sourceTree = "<group>";
+		};
+		952E18A522AB826E00980910 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				952E18A622AB828D00980910 /* PopupTableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		952E18A822ABB55200980910 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				952E18A922ABB59C00980910 /* PopupTableViewCell.swift */,
+				952E18AA22ABB59C00980910 /* PopupTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		953465F622AA39B300A0503F = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +171,7 @@
 		9534660122AA39B600A0503F /* TestAutoCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				952E189E22AB742800980910 /* PopupTableViewController */,
 				95A5BBDC22AA7D5C004CC7CE /* CarDetailScreen */,
 				95A5BBC222AA5735004CC7CE /* CarsListScreen */,
 				95A5BBB922AA3DCC004CC7CE /* Model */,
@@ -211,6 +256,7 @@
 				95A5BBC422AA57A3004CC7CE /* Storyboarded.swift */,
 				95A5BBC622AA5869004CC7CE /* Coordinator.swift */,
 				95A5BBE522AA8C9B004CC7CE /* CarDetailViewModelItem.swift */,
+				952E18A322AB7E5700980910 /* StoredAsEnum.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -250,6 +296,8 @@
 				956AAB0822AAC9A30005A6F4 /* CarDetailLabelViewCell.xib */,
 				956AAB0B22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift */,
 				956AAB0C22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib */,
+				9596C83622AAFBB800FA35D1 /* CarDetailDatePickerViewCell.swift */,
+				9596C83722AAFBB800FA35D1 /* CarDetailDatePickerViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,8 +399,11 @@
 				95A5BBE022AA7D98004CC7CE /* CarDetailViewController.storyboard in Resources */,
 				956AAB0A22AAC9A30005A6F4 /* CarDetailLabelViewCell.xib in Resources */,
 				95A5BBCD22AA5ADB004CC7CE /* CarsListScreenViewController.storyboard in Resources */,
+				9596C83922AAFBB800FA35D1 /* CarDetailDatePickerViewCell.xib in Resources */,
 				9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */,
+				952E18A222AB748100980910 /* PopupTableViewController.storyboard in Resources */,
 				956AAB0E22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib in Resources */,
+				952E18AC22ABB59C00980910 /* PopupTableViewCell.xib in Resources */,
 				9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +434,9 @@
 				95A5BBC022AA5149004CC7CE /* CarDataService.swift in Sources */,
 				95A5BBF022AA8FA8004CC7CE /* CarDetailViewModelCarBodyStyleItem.swift in Sources */,
 				9534660322AA39B600A0503F /* AppDelegate.swift in Sources */,
+				952E18AB22ABB59C00980910 /* PopupTableViewCell.swift in Sources */,
 				95A5BBDE22AA7D84004CC7CE /* CarDetailViewController.swift in Sources */,
+				952E18A422AB7E5700980910 /* StoredAsEnum.swift in Sources */,
 				95A5BBEC22AA8F0E004CC7CE /* CarDetailViewModelYearItem.swift in Sources */,
 				95A5BBEE22AA8F62004CC7CE /* CarDetailViewModelCarClassItem.swift in Sources */,
 				95A5BBCB22AA5A9C004CC7CE /* CarsListScreenViewController.swift in Sources */,
@@ -393,8 +446,11 @@
 				95A5BBD922AA736D004CC7CE /* Box.swift in Sources */,
 				95A5BBC722AA5869004CC7CE /* Coordinator.swift in Sources */,
 				95A5BBD022AA66F6004CC7CE /* CarsListViewModel.swift in Sources */,
+				952E18A022AB746900980910 /* PopupTableViewController.swift in Sources */,
+				952E18A722AB828D00980910 /* PopupTableViewModel.swift in Sources */,
 				95A5BBDB22AA7AE0004CC7CE /* DateExtensions.swift in Sources */,
 				95A5BBEA22AA8E1A004CC7CE /* Constants.swift in Sources */,
+				9596C83822AAFBB800FA35D1 /* CarDetailDatePickerViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
