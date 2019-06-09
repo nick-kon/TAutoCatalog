@@ -10,6 +10,11 @@ import Foundation
 
 /// Classes of car in Europe
 
+enum CarModelError: Error {
+    case emptyName
+    case emptyManufacturer
+}
+
 enum CarClass: String, Codable, StoredAsEnum, CaseIterable {
     
     case a = "mini"   // Mini cars
