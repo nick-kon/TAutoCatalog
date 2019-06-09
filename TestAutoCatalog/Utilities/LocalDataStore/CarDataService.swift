@@ -11,6 +11,7 @@ import Foundation
 class CarDataService {
     
     private let cars: LinkedList<CarModel>
+    var listenter: DataServiceListener?
     
     init() {
         cars = LinkedList<CarModel>()
@@ -19,12 +20,20 @@ class CarDataService {
     var count: Int {
         return cars.count
     }
-    
+    deinit {
+        print("cardataservice deinit")
+    }
+}
+//MARK: - private functions
+private extension CarDataService {
+    func fireUpdateToListener(at index: Int) {
+        listenter?.update(at: index)
+    }
 }
 
 //MARK: - API
 extension CarDataService {
-
+    
     func append(_ car: CarModel) {
         cars.append(car)
     }
@@ -33,20 +42,18 @@ extension CarDataService {
        try! cars.delete(at: index)
     }
     
-    func getCar(at index: Int) -> CarModel? {
-        return try! cars.getValue(at: index)
-    }
-    
-    func updateCar(at index: Int, with car: CarModel) {
-        cars.update(at: index, with: car)
+    subscript(index: Int) -> CarModel {
+        get {
+            return cars[index]
+        }
+        set {
+            cars[index] = newValue
+            fireUpdateToListener(at: index)
+        }
     }
     
     func loadMockData() {
         
-        
-      //  let car1 = CarModel(modelName: "Focus", year: Date(), manufacturer: "Ford", car)
-      //  let car2 = CarModel(modelName: "Camry", year: Date(), manufacturer: "Toyota")
-      //  let car3 = CarModel(modelName: "Ram", year: Date(), manufacturer: "Dodge")
         let car1 = CarModel(modelName: "Focus", year: Date(), manufacturer: "Ford", bodyStyle: .sedan, carClass: .c)
         let car2 = CarModel(modelName: "Camry", year: Date(), manufacturer: "Toyota", bodyStyle: .crossover, carClass: .d)
         let car3 = CarModel(modelName: "Ram", year: Date(), manufacturer: "Dodge", bodyStyle: .truck, carClass: .f)
@@ -54,27 +61,7 @@ extension CarDataService {
         cars.append(car1)
         cars.append(car2)
         cars.append(car3)
-//        print("added")
-//        for i in 0 ..< cars.count {
-//            let car = try! cars.getValue(at: i)
-//            print(car?.modelName)
-//        }
-//        
-//        print("deleted at 1")
-//        try! cars.delete(at: 1)
-//
-//        for i in 0 ..< cars.count {
-//            let car = try! cars.getValue(at: i)
-//            print(car?.modelName)
-//        }
-//
-//        print("deleted at 1")
-//        try! cars.delete(at: 1)
-//
-//        for i in 0 ..< cars.count {
-//            let car = try! cars.getValue(at: i)
-//            print(car?.modelName)
-//        }
+
     }
 
 //    func load(completion: @escaping (Result<LinkedList<CarModel>, Error>) -> Void) {

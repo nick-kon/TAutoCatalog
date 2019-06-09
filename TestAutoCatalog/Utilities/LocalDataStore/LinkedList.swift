@@ -30,7 +30,20 @@ class LinkedList<T>{
     private var head: ListNode<T>?
     private(set) var count: Int = 0
 
-    //MARK: - API
+    subscript(index: Int) -> T {
+        get {
+            return try! getValue(at: index)!
+        }
+        set {
+            update(at: index, with: newValue)
+        }
+    }
+    
+    deinit {
+        let str = String(describing: T.self)
+        print("Linked List deinit with type: " + str)
+    }
+//MARK: - API
 
     func append(_ value: T) {
        let newNode = ListNode(value: value)
@@ -61,11 +74,7 @@ class LinkedList<T>{
         count += 1
     }
     
-    func update(at index: Int, with value: T) {
-        let updatedNode = try! getNode(at: index)
-        updatedNode?.value = value
-    }
-    
+
     func delete(at index: Int) throws {
         
         guard index < count, index >= 0 else { throw ListError.IndexOutOfRange }
@@ -80,13 +89,10 @@ class LinkedList<T>{
         count -= 1
     }
     
-    func getValue(at index: Int) throws -> T? {
-        let node = try! getNode(at: index)
-        return node?.value
-    }
     
 //MARK: - Private functions
-private func getNode(at index: Int) throws -> ListNode<T>? {
+    
+    private func getNode(at index: Int) throws -> ListNode<T>? {
         guard index < count, index >= 0 else { throw ListError.IndexOutOfRange  }
         var iterator = head
         for _ in 0 ..< index {
@@ -94,5 +100,18 @@ private func getNode(at index: Int) throws -> ListNode<T>? {
         }
         return iterator
     }
+    
+    private func getValue(at index: Int) throws -> T? {
+        let node = try! getNode(at: index)
+        return node?.value
+    }
+    
+    private func update(at index: Int, with value: T) {
+        let updatedNode = try! getNode(at: index)
+        updatedNode?.value = value
+    }
+    
 }
+
+
 
