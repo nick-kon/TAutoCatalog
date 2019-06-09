@@ -26,9 +26,6 @@ class CarDataService {
 }
 //MARK: - private functions
 private extension CarDataService {
-    func fireUpdateToListener(at index: Int) {
-        listenter?.update(at: index)
-    }
 }
 
 //MARK: - API
@@ -36,10 +33,12 @@ extension CarDataService {
     
     func append(_ car: CarModel) {
         cars.append(car)
+        listenter?.synchronizeAll()
     }
     
     func delete(at index: Int) {
        try! cars.delete(at: index)
+        listenter?.synchronizeAll()
     }
     
     subscript(index: Int) -> CarModel {
@@ -48,7 +47,7 @@ extension CarDataService {
         }
         set {
             cars[index] = newValue
-            fireUpdateToListener(at: index)
+            listenter?.synchronize(at: index)
         }
     }
     

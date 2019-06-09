@@ -9,6 +9,6 @@
 import Foundation
 
 protocol DataServiceListener {
-    func update(at index:Int)
-    
+    func synchronize(at index:Int)
+    func synchronizeAll()
 }
