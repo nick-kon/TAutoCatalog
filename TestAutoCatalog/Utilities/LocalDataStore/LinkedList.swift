@@ -89,6 +89,10 @@ class LinkedList<T>{
         count -= 1
     }
     
+    func deleteAll() {
+        head = nil
+        count = 0
+    }
     
 //MARK: - Private functions
     
