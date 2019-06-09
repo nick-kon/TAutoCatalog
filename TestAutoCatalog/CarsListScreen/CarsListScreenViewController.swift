@@ -12,10 +12,7 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
     
 
     @IBOutlet weak var helpView: UIView!
-    
-    @IBAction func helpViewCloseButtonTapped(_ sender: UIButton) {
-    }
-    
+
     @IBOutlet weak var tableView: UITableView!
     var carsViewModel: CarsListViewModel!
     weak var coordinator: MainCoordinator!
@@ -24,7 +21,7 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
        
         setupTableView()
-        
+        setupHelpScreen()
         // Do any additional setup after loading the view.
     }
 
@@ -37,7 +34,17 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
 private extension CarsListScreenViewController {
     @IBAction func addButtonTapped(_ sender: UIButton) {
         coordinator.addCar()
-      // print("addCar")
+    }
+    
+    @IBAction func helpViewCloseButtonTapped(_ sender: UIButton) {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.helpView.alpha = 0
+        }) { (success) in
+            UserDefaults.standard.set(true, forKey: Constants.Keys.isHiddenHelpScreen)
+            self.helpView.removeFromSuperview()
+        }
+        
     }
     
 }
@@ -48,6 +55,13 @@ private extension CarsListScreenViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
+    }
+    
+    func setupHelpScreen() {
+        if (!UserDefaults.standard.bool(forKey: Constants.Keys.isHiddenHelpScreen)) {
+            helpView.frame = view.bounds
+            view.addSubview(helpView)
+        }
     }
 }
 
