@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QbH-gF-NaG">
-                        <rect key="frame" x="0.0" y="0.0" width="416" height="174.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="174"/>
                     </pickerView>
                 </subviews>
                 <constraints>

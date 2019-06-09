@@ -55,7 +55,11 @@ class CarDetailViewModel {
     
     var items = [CarDetailViewModelItem]()
     
+    private var initialCar: CarModel?
+    
     init(car: CarModel) {
+        
+        initialCar = car
         
         let modelItem = CarDetailViewModelNameModelItem(modelName: car.modelName)
         items.append(modelItem)
@@ -121,6 +125,33 @@ class CarDetailViewModel {
         state = .endEditing(index)
     }
     
+    func composeCarModel() -> CarModel? {
+        
+        switch state {
+        case .normal:
+            for item in items {
+                switch item.type {
+                case .carClass:
+                    let carClassItem = item as! CarDetailViewModelCarClassItem
+                    initialCar?.carClass = carClassItem.carAttributeEnumValue as! CarClass
+                case .carType:
+                    let carBodyStyleItem = item as! CarDetailViewModelCarBodyStyleItem
+                    initialCar?.bodyStyle = carBodyStyleItem.carAttributeEnumValue as! CarBodyStyle
+                case .manufacturer:
+                    let manufacturerItem = item as! CarDetailViewModelManufacturerItem
+                    initialCar?.manufacturer = manufacturerItem.manufacturer
+                case .modelName:
+                    let modelNameItem = item as! CarDetailViewModelNameModelItem
+                    initialCar?.modelName = modelNameItem.modelName
+                case .year:
+                    let yearItem = item as! CarDetailViewModelYearItem
+                    initialCar?.year = yearItem.year
+                }
+            }
+        return initialCar
+        default: return nil
+        }
+    }
 }
 
 

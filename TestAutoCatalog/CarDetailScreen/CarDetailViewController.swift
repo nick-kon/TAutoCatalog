@@ -24,14 +24,21 @@ class CarDetailViewController: UIViewController, Storyboarded {
         bindViewModel()
     }
 
+    deinit {
+        print("Car detail VC deinit")
+    }
 }
 
 //MARK: - User interactions
 private extension CarDetailViewController {
     
     @IBAction func rightBarButtonTapped(_ sender: UIBarButtonItem) {
-        print("right button tapped")
-    
+   //     print("right button tapped")
+        if let resultCar = viewModel.composeCarModel() {
+            coordinator.didUpdateDetailsForCar(car: resultCar)
+        } else {
+            print("wrong carModel in detail car VC")
+        }
     }
     
 }
@@ -64,7 +71,7 @@ private extension CarDetailViewController {
             self.rightBarButton.title = title
         }
         
-        viewModel.reloadRow = { (section) in
+        viewModel.reloadRow = {[unowned self] (section) in
             let indexSet = IndexSet(integer: section)
             self.tableView.reloadSections(indexSet, with: .automatic)
         }

@@ -24,10 +24,14 @@ class MainCoordinator: Coordinator {
         dataService = CarDataService()
     }
     
+    deinit {
+        print("main coordinator deinit")
+    }
+    
     func start() {
         
         let vc = CarsListScreenViewController.instantiate()
-        
+        dataService.listenter = vc
         //prepare data
         let viewModel = CarsListViewModel(with: dataService)
         vc.carsViewModel = viewModel
@@ -51,7 +55,7 @@ class MainCoordinator: Coordinator {
         vc.coordinator = self
 
         //prepare data
-        let viewModel = CarDetailViewModel(car: dataService.getCar(at: index)!)
+        let viewModel = CarDetailViewModel(car: dataService[index])
         vc.viewModel = viewModel
       
         vc.title = Constants.UI.CarDetailScreen.titleDetail
@@ -60,4 +64,15 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    func didUpdateDetailsForCar(car: CarModel) {
+        dataService[currentCarIndex] = car
+        
+        navigationController.popViewController(animated: true)
+        //need to update carsList
+    }
+    
+    func addedCar() {
+        
+        
+    }
 }
