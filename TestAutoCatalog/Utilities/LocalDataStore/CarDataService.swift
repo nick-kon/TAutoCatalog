@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CarDataService {
-    
+class CarDataService  {
+   // let arr = Array()
     private let cars: LinkedList<CarModel>
     var listenter: DataServiceListener?
     
@@ -26,6 +26,11 @@ class CarDataService {
 }
 //MARK: - private functions
 private extension CarDataService {
+    
+    func loadFromFile() {
+        
+        
+    }
 }
 
 //MARK: - API
@@ -71,7 +76,28 @@ extension CarDataService {
 //
 //    }
     
-    func export() {
+    func encodeToJSON() -> Data? {
+        
+        var arr = [CarModel]()
+        
+        for i in 0 ..< count {
+            arr.append(cars[i])
+        }
+        
+        return try? JSONEncoder().encode(arr)
+    }
+    
+    func decodeFromJSON(jsonData: Data) {
+        
+        let cars =  try! JSONDecoder().decode([CarModel].self, from: jsonData)
+        
+        for car in cars {
+            self.cars.append(car)
+        }
+        
+    }
+    
+    func saveToFile() {
         
     }
 }
