@@ -26,16 +26,14 @@ class CarDetailViewModelNameModelItem : CarDetailViewModelItem {
     }
     
     init(modelName: String) {
+        
         self.textValue = modelName
         self.modelName = modelName
     }
     
-    func isValid(textValue: String) -> Bool {
+    func isValid() -> Bool {
         
-        if textValue.count > 0  {
-          return true
-        }
-        
-        return false
+        return textValue.count > 0 ? true : false
+
     }
 }

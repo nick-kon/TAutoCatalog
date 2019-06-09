@@ -29,10 +29,8 @@ class CarDetailViewModelManufacturerItem: CarDetailViewModelItem {
         self.manufacturer = manufacturer
     }
     
-    func isValid(textValue: String) -> Bool {
-        if textValue.count > 0 {
-            return true
-        }
-        return false
+    func isValid() -> Bool {
+        return textValue.count > 0 ? true : false
+//        return false
     }
 }
