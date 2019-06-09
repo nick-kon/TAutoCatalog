@@ -14,6 +14,12 @@ struct Constants {
     
     struct UI {
         
+        struct ErrorMessages {
+            static let emptyModelname = "Enter model name."
+            static let emptyManufacturer = "Enter manufacturer."
+            
+        }
+        
         struct CarBodyStyle {
             static let suv = "Sport utility vehicle."
             static let truck = "Truck. Pickup."
