@@ -14,14 +14,14 @@ protocol CarDetailViewModelItem {
     var title: String { get }
     var textValue: String { get }
     
-    func isValid(textValue: String) -> Bool
+    func isValid() -> Bool
 }
 
 extension CarDetailViewModelItem {
     var numberOfRows: Int {
         return 1
     }
-    func isValid(textValue: String) -> Bool {
+    func isValid() -> Bool {
         return true
     }
 }
