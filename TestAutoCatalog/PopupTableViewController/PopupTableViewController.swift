@@ -23,9 +23,7 @@ class PopupTableViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = PopupViewModel(with: carAttribute)
-        
         setupTableView()
-
     }
     
     deinit {
@@ -35,6 +33,7 @@ class PopupTableViewController: UIViewController, Storyboarded {
 //MARK: - User interactions
 private extension PopupTableViewController {
     @IBAction func closeButtonTapped(_ sender: UIButton) {
+        delegate?.cancelSelection()
         dismiss(animated: true, completion: nil)
     }
 }
