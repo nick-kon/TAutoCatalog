@@ -10,4 +10,5 @@ import Foundation
 
 protocol TableViewPickerDelegate: AnyObject {
     func didSelectEnumValue(_ value: StoredAsEnum)
+    func cancelSelection()
 }
