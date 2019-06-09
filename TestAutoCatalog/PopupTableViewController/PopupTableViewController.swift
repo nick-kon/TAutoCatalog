@@ -27,6 +27,10 @@ class PopupTableViewController: UIViewController, Storyboarded {
         setupTableView()
 
     }
+    
+    deinit {
+        print("popup TVC deinit")
+    }
  }
 //MARK: - User interactions
 private extension PopupTableViewController {

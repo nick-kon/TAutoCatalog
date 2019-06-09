@@ -15,7 +15,6 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
     var carsViewModel: CarsListViewModel!
     weak var coordinator: MainCoordinator!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -24,6 +23,9 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
         // Do any additional setup after loading the view.
     }
 
+    deinit {
+        print("CarsListScreenViewController deinit")
+    }
 }
 
 //MARK: - User interactions
@@ -61,5 +63,18 @@ extension CarsListScreenViewController: UITableViewDataSource {
 extension CarsListScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coordinator.showDetailForCar(at: indexPath.row)
+    }
+}
+
+//MARK: - DataServiceListener
+extension CarsListScreenViewController: DataServiceListener {
+    func update(at index: Int) {
+     
+        //update viewModel
+        carsViewModel.synchronizeEntity(at: index)
+        
+        //update tableview
+        let indexPath = IndexPath(row: index, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }

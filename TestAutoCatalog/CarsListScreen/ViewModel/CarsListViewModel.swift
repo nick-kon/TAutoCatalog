@@ -18,15 +18,18 @@ struct CarViewModel {
         modelName = car.modelName
         year = car.year
     }
+    
 }
 
 class CarsListViewModel {
+    
+    private var _currentCars: LinkedList<CarViewModel>
     
     enum State {
         case loading
         case error(Error)
         case empty
-        case populated([CarViewModel])
+        case populated
     }
     
     let dataService: CarDataService!
@@ -41,19 +44,35 @@ class CarsListViewModel {
         }
     }
     
-    var currentCars: [CarViewModel] {
-        switch state {
-        case .populated(let cars):
-            return cars
-        default:
-            return []
+    var currentCars: LinkedList<CarViewModel> {
+        get {
+            switch state {
+            case .populated:
+                return _currentCars
+            default:
+                return LinkedList<CarViewModel>()
+            }
+        }
+        set {
+            switch state {
+            case .populated:
+                _currentCars = newValue
+            default:
+                print("default in current cars set")
+            }
         }
     }
     
     init(with dataService: CarDataService) {
         state = .loading
         self.dataService = dataService
+        _currentCars = LinkedList<CarViewModel>()
+        
         fetchData()
+    }
+    
+    func synchronizeEntity(at index: Int) {
+            currentCars[index] =  CarViewModel(with: dataService[index])
     }
 }
 
@@ -63,12 +82,14 @@ private extension CarsListViewModel {
         
        dataService.loadMockData()
         
-        var result = [CarViewModel]()
+     //   var result = [CarViewModel]()
         for i in 0 ..< dataService.count {
-            let carModel = dataService.getCar(at: i)!
-            result.append(CarViewModel(with: carModel))
+            let carModel = dataService[i]
+            _currentCars.append(CarViewModel(with: carModel))
         }
         
-        state = .populated(result)
+        state = .populated
     }
+    
+
 }
