@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95225CB722ACB83E00CCF6AC /* DataServiceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */; };
+		95225CB922ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */; };
 		952E18A022AB746900980910 /* PopupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E189F22AB746900980910 /* PopupTableViewController.swift */; };
 		952E18A222AB748100980910 /* PopupTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952E18A122AB748100980910 /* PopupTableViewController.storyboard */; };
 		952E18A422AB7E5700980910 /* StoredAsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E18A322AB7E5700980910 /* StoredAsEnum.swift */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceListener.swift; sourceTree = "<group>"; };
+		95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbleToShowErrorMessage.swift; sourceTree = "<group>"; };
 		952E189F22AB746900980910 /* PopupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTableViewController.swift; sourceTree = "<group>"; };
 		952E18A122AB748100980910 /* PopupTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupTableViewController.storyboard; sourceTree = "<group>"; };
 		952E18A322AB7E5700980910 /* StoredAsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredAsEnum.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				952E18AF22AC241500980910 /* YearPickerDelegate.swift */,
 				952E18B322AC43A500980910 /* CarDetailTableViewDelegate.swift */,
 				95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */,
+				95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				952E18A722AB828D00980910 /* PopupTableViewModel.swift in Sources */,
 				95A5BBDB22AA7AE0004CC7CE /* DateExtensions.swift in Sources */,
 				95A5BBEA22AA8E1A004CC7CE /* Constants.swift in Sources */,
+				95225CB922ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift in Sources */,
 				952E18AE22ABFD0E00980910 /* TableViewPickerDelegate.swift in Sources */,
 				9596C83822AAFBB800FA35D1 /* CarDetailDatePickerViewCell.swift in Sources */,
 				95225CB722ACB83E00CCF6AC /* DataServiceListener.swift in Sources */,
