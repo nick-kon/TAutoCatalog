@@ -23,7 +23,8 @@ class CarDetailLabelViewCell: UITableViewCell {
     }
     
     func configure(with item: CarDetailViewModelItem) {
-        label.text = item.textValue
+        
+        label.text = item.textValue.count > 0 ? item.textValue : ""
     }
     
 }

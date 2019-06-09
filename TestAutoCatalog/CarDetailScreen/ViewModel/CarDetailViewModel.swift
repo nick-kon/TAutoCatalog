@@ -20,24 +20,26 @@ class CarDetailViewModel {
         case normal
         case editing(Int)
         case endEditing(Int)
-        case adding
+        case modified
     }
+    
+    var isAddingCar = false
     
     var state: State {
         didSet {
             switch state {
             case .normal:
                 title.value = Constants.UI.CarDetailScreen.titleDetail
-                rightBarButtonTitle.value = Constants.UI.edit
             case .editing:
-                title.value = Constants.UI.CarDetailScreen.titleEdit
-                rightBarButtonTitle.value = Constants.UI.done
+                title.value = isAddingCar ? Constants.UI.CarDetailScreen.titleAdd : Constants.UI.CarDetailScreen.titleEdit
+                rightBarButtonEnabled.value = false
             case .endEditing(let index):
-                state = .normal
+                state = .modified
+                rightBarButtonTitle.value = isAddingCar ? Constants.UI.add : Constants.UI.done
+                rightBarButtonEnabled.value = true
                 reloadRow?(index)
-            case .adding:
-                title.value = Constants.UI.CarDetailScreen.titleAdd
-                rightBarButtonTitle.value = Constants.UI.save
+            case .modified:
+                let _ : Int = 0
             }
         }
     }
@@ -82,6 +84,7 @@ class CarDetailViewModel {
     
     var title: Box<String> = Box("")
     var rightBarButtonTitle: Box<String> = Box("")
+    var rightBarButtonEnabled: Box<Bool> = Box(false)
     
     func didSelectEnumValue(_ value: StoredAsEnum) {
         guard let index = editingItemIndex else { return }
@@ -125,10 +128,8 @@ class CarDetailViewModel {
         state = .endEditing(index)
     }
     
-    func composeCarModel() -> CarModel? {
-        
-        switch state {
-        case .normal:
+    func composeCarModel() -> Result<CarModel, CarModelError> {
+
             for item in items {
                 switch item.type {
                 case .carClass:
@@ -139,18 +140,20 @@ class CarDetailViewModel {
                     initialCar?.bodyStyle = carBodyStyleItem.carAttributeEnumValue as! CarBodyStyle
                 case .manufacturer:
                     let manufacturerItem = item as! CarDetailViewModelManufacturerItem
+                    guard manufacturerItem.isValid() else {return .failure(CarModelError.emptyManufacturer) }
                     initialCar?.manufacturer = manufacturerItem.manufacturer
                 case .modelName:
                     let modelNameItem = item as! CarDetailViewModelNameModelItem
+                    guard modelNameItem.isValid() else { return .failure(CarModelError.emptyName)}
                     initialCar?.modelName = modelNameItem.modelName
                 case .year:
                     let yearItem = item as! CarDetailViewModelYearItem
                     initialCar?.year = yearItem.year
                 }
             }
-        return initialCar
-        default: return nil
-        }
+        
+        return .success(initialCar!)
+  
     }
 }
 

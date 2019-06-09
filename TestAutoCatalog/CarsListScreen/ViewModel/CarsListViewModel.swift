@@ -72,7 +72,16 @@ class CarsListViewModel {
     }
     
     func synchronizeEntity(at index: Int) {
+        
             currentCars[index] =  CarViewModel(with: dataService[index])
+    }
+    
+    func synchronizeAll() {
+        _currentCars.deleteAll()
+        for i in 0 ..< dataService.count {
+            let carModel = dataService[i]
+            _currentCars.append(CarViewModel(with: carModel))
+        }
     }
 }
 
@@ -80,13 +89,9 @@ class CarsListViewModel {
 private extension CarsListViewModel {
     func fetchData() {
         
-       dataService.loadMockData()
+        dataService.loadMockData()
         
-     //   var result = [CarViewModel]()
-        for i in 0 ..< dataService.count {
-            let carModel = dataService[i]
-            _currentCars.append(CarViewModel(with: carModel))
-        }
+        synchronizeAll()
         
         state = .populated
     }

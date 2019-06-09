@@ -8,8 +8,7 @@
 
 import UIKit
 
-class CarDetailViewController: UIViewController, Storyboarded {
-
+class CarDetailViewController: UIViewController, Storyboarded, AbleToShowMessage {
     
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -33,11 +32,20 @@ class CarDetailViewController: UIViewController, Storyboarded {
 private extension CarDetailViewController {
     
     @IBAction func rightBarButtonTapped(_ sender: UIBarButtonItem) {
-   //     print("right button tapped")
-        if let resultCar = viewModel.composeCarModel() {
-            coordinator.didUpdateDetailsForCar(car: resultCar)
-        } else {
-            print("wrong carModel in detail car VC")
+        
+        switch viewModel.composeCarModel() {
+        case .success(let result):
+            
+            viewModel.isAddingCar ? coordinator.didAddCar(car: result) : coordinator.didUpdateDetailsForCar(car: result)
+        case .failure(let error):
+            switch error {
+            case .emptyManufacturer:
+                showErrorMessage(Constants.UI.ErrorMessages.emptyManufacturer, completion: nil)
+            case .emptyName:
+                showErrorMessage(Constants.UI.ErrorMessages.emptyModelname) {
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
     
@@ -70,11 +78,16 @@ private extension CarDetailViewController {
         viewModel.rightBarButtonTitle.bind {[unowned self] (title) in
             self.rightBarButton.title = title
         }
+ 
+        viewModel.rightBarButtonEnabled.bind {[unowned self] (isEnabled) in
+            self.rightBarButton.isEnabled = isEnabled
+        }
         
         viewModel.reloadRow = {[unowned self] (section) in
             let indexSet = IndexSet(integer: section)
             self.tableView.reloadSections(indexSet, with: .automatic)
         }
+        
         
     }
     
@@ -98,7 +111,7 @@ extension CarDetailViewController: UITableViewDataSource {
         let item = viewModel.items[indexPath.section]
         
         switch viewModel.state {
-        case .normal:
+        case .normal, .modified:
              if let cell = tableView.dequeueReusableCell(withIdentifier: CarDetailLabelViewCell.identifier, for: indexPath) as? CarDetailLabelViewCell {
                             cell.configure(with: item)
                 return cell
@@ -175,6 +188,10 @@ extension CarDetailViewController: UITableViewDelegate {
 extension CarDetailViewController: TableViewPickerDelegate {
     func didSelectEnumValue(_ value: StoredAsEnum) {
         viewModel.didSelectEnumValue(value)
+    }
+    
+    func cancelSelection() {
+        viewModel.state = .endEditing(viewModel.editingItemIndex!)
     }
 }
 

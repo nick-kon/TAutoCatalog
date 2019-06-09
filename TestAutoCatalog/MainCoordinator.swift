@@ -43,6 +43,14 @@ class MainCoordinator: Coordinator {
     func addCar() {
         
         let vc = CarDetailViewController.instantiate()
+        let car = CarModel(modelName: "", year: Date(), manufacturer: "", bodyStyle: .convertible, carClass: .a)
+        let viewModel = CarDetailViewModel(car: car)
+        viewModel.isAddingCar = true
+        vc.viewModel = viewModel
+        
+        vc.title = Constants.UI.CarDetailScreen.titleAdd
+        vc.rightBarButton.title = Constants.UI.add
+        
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
         
@@ -57,9 +65,9 @@ class MainCoordinator: Coordinator {
         //prepare data
         let viewModel = CarDetailViewModel(car: dataService[index])
         vc.viewModel = viewModel
-      
+
+        
         vc.title = Constants.UI.CarDetailScreen.titleDetail
-        vc.rightBarButton.title = Constants.UI.edit
         
         navigationController.pushViewController(vc, animated: true)
     }
@@ -71,8 +79,8 @@ class MainCoordinator: Coordinator {
         //need to update carsList
     }
     
-    func addedCar() {
-        
-        
+    func didAddCar(car: CarModel) {
+        dataService.append(car)
+        navigationController.popViewController(animated: true)
     }
 }

@@ -11,6 +11,11 @@ import UIKit
 class CarsListScreenViewController: UIViewController, Storyboarded {
     
 
+    @IBOutlet weak var helpView: UIView!
+    
+    @IBAction func helpViewCloseButtonTapped(_ sender: UIButton) {
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     var carsViewModel: CarsListViewModel!
     weak var coordinator: MainCoordinator!
@@ -32,7 +37,7 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
 private extension CarsListScreenViewController {
     @IBAction func addButtonTapped(_ sender: UIButton) {
         coordinator.addCar()
-        print("addCar")
+      // print("addCar")
     }
     
 }
@@ -68,7 +73,7 @@ extension CarsListScreenViewController: UITableViewDelegate {
 
 //MARK: - DataServiceListener
 extension CarsListScreenViewController: DataServiceListener {
-    func update(at index: Int) {
+    func synchronize(at index: Int) {
      
         //update viewModel
         carsViewModel.synchronizeEntity(at: index)
@@ -77,4 +82,10 @@ extension CarsListScreenViewController: DataServiceListener {
         let indexPath = IndexPath(row: index, section: 0)
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
+    
+    func synchronizeAll() {
+        carsViewModel.synchronizeAll()
+        tableView.reloadData()
+    }
+    
 }
