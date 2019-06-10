@@ -19,17 +19,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text in textfield" borderStyle="roundedRect" placeholder="placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vvY-4W-Qow">
-                        <rect key="frame" x="10" y="0.0" width="300" height="43.5"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vvY-4W-Qow">
+                        <rect key="frame" x="40" y="0.0" width="270" height="43.5"/>
                         <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vvY-4W-Qow" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BqH-QE-luG"/>
                     <constraint firstAttribute="trailing" secondItem="vvY-4W-Qow" secondAttribute="trailing" constant="10" id="KkC-WU-dv5"/>
-                    <constraint firstItem="vvY-4W-Qow" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ioD-Bs-cYI"/>
+                    <constraint firstItem="vvY-4W-Qow" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="ioD-Bs-cYI"/>
                     <constraint firstAttribute="bottom" secondItem="vvY-4W-Qow" secondAttribute="bottom" id="ym7-2U-P5D"/>
                 </constraints>
             </tableViewCellContentView>

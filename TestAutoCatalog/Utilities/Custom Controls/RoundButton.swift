@@ -15,5 +15,8 @@ class RoundButton: UIButton {
         super.init(coder: aDecoder)
         
         layer.cornerRadius = frame.height / 2
+        layer.shadowOpacity = 0.35
+        layer.shadowOffset = CGSize(width: 0, height: 10)
+        layer.shadowRadius = 5
     }
 }
