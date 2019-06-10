@@ -126,7 +126,6 @@ private extension CarsListViewModel {
                 self?.state = .error(error)
             } else {
                 self?.synchronizeAll()
-                self?.state = .populated
             }
         }
     }
