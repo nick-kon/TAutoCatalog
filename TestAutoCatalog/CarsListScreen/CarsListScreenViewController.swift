@@ -23,22 +23,13 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         
         setupTableView()
         setupHelpScreen()
         bindViewModel()
         // Do any additional setup after loading the view.
     }
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        print("carsListScreenVC did disappear")
-    }
-    
-    deinit {
-        print("CarsListScreenViewController deinit")
-    }
+
 }
 
 //MARK: - User interactions
@@ -56,9 +47,7 @@ private extension CarsListScreenViewController {
             self.helpView.removeFromSuperview()
             self.view.removeVisualEffect()
         }
-        
     }
-    
 }
 
 //MARK: - Private functions
@@ -70,12 +59,12 @@ private extension CarsListScreenViewController {
     }
     
     func setupHelpScreen() {
-       // if (!UserDefaults.standard.bool(forKey: Constants.Keys.isHiddenHelpScreen)) {
+        if (!UserDefaults.standard.bool(forKey: Constants.Keys.isHiddenHelpScreen)) {
             view.addDarkBlurEffect()
             helpView.frame = view.bounds
             HelpViewContentView.addRoundedCorners()
             view.addSubview(helpView)
-      //  }
+        }
     }
     
     func bindViewModel() {

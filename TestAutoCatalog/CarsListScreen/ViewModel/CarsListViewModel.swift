@@ -16,7 +16,6 @@ struct CarViewModel {
         modelName = car.modelName
         year = car.year
     }
-    
 }
 
 class CarsListViewModel {
@@ -30,41 +29,36 @@ class CarsListViewModel {
         case populated
     }
     
-    
-    
     let dataService: CarDataService!
     var state: State {
         didSet {
             switch state {
             case .loading:
                 isNeededActivityIndicator.value = true
-                print(".loading")
-//                print("loading")
             case .error(let error):
                 var text = ""
                 switch error {
                 case .cannotProcessData:
-                    text = "cannot process data"
+                    text = Constants.UI.ErrorMessages.cannotProcessData
                 case .fileDoesNotExists:
-                    text = "file does not exists"
+                    text = Constants.UI.ErrorMessages.fileDoesNotExist
                 case .cannotWriteToFile:
-                    text = "cannot write to file"
+                    text = Constants.UI.ErrorMessages.cannotWriteToFile
                 case .unexpectedError:
-                    text = "unexpected error"
+                    text = Constants.UI.ErrorMessages.unexpectedError
                 }
                 
                 titleInFooterView.value = text
                 isNeededActivityIndicator.value = false
 
             case .populated:
-                print(".populated")
                 isNeededActivityIndicator.value = false
                 titleInFooterView.value = ""
                 reloadView?()
             case .empty:
                 isNeededActivityIndicator.value = false
                 reloadView?()
-                titleInFooterView.value = "Empty list. Add some records"
+                titleInFooterView.value = Constants.UI.ErrorMessages.emptyList
             }
         }
     }
@@ -83,7 +77,7 @@ class CarsListViewModel {
             case .populated:
                 _currentCars = newValue
             default:
-                print("default in current cars set")
+                let _ = 0
             }
         }
     }
@@ -93,20 +87,13 @@ class CarsListViewModel {
     var titleInFooterView = Box("")
     var reloadView: (() -> Void)?
     
-    
     init(with dataService: CarDataService) {
-        
-        print("cars list view model init")
         
         state = .loading
         self.dataService = dataService
         _currentCars = LinkedList<CarViewModel>()
         
         fetchData()
-    }
-    
-    deinit {
-        print("cars list view model deinit")
     }
     
     //MARK: - Public functions

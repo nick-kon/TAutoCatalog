@@ -16,8 +16,7 @@ enum DataServiceError: Error {
 }
 
 class CarDataService{
-    
-   // let arr = Array()
+
     private let cars: LinkedList<CarModel>
     var listenter: DataServiceListener?
     
@@ -32,11 +31,8 @@ class CarDataService{
     var count: Int {
         return cars.count
     }
-    deinit {
-        print("cardataservice deinit")
-    }
 }
-//MARK: - LocalFileSystemSupported
+//MARK: - Save & load to file
 extension CarDataService {
     
     func save(completion: ((DataServiceError?) -> Void)?) {
@@ -45,8 +41,7 @@ extension CarDataService {
             completion?(DataServiceError.cannotProcessData)
             return
         }
-
-     //   DispatchQueue.global(qos: .background).async {
+       DispatchQueue.global(qos: .background).async {
             
             if FileManager.default.fileExists(atPath: self.URLToFilename.path) {
                 do {
@@ -61,17 +56,16 @@ extension CarDataService {
             } catch {
                 completion?(DataServiceError.cannotWriteToFile)
             }
-
- //       }
+        }
     }
     
     func load(completion: @escaping (DataServiceError?) -> Void) {
         
-        print(URLToFilename.absoluteString)
-        
         if UserDefaults.standard.bool(forKey: Constants.Keys.isNotRequiredMockData) {
             
-       //     DispatchQueue.global(qos: .background).async {
+            let deadLine = DispatchTime.now() + .seconds(Constants.delaySimulated)
+            
+            DispatchQueue.main.asyncAfter(deadline: deadLine) {
                 
                 guard FileManager.default.fileExists(atPath: self.URLToFilename.path)
                     else { completion(DataServiceError.fileDoesNotExists)
@@ -85,47 +79,14 @@ extension CarDataService {
                 } catch {
                     completion(DataServiceError.cannotProcessData)
                 }
-      //      }
+            }
         } else {
             self.loadMockData()
             UserDefaults.standard.set(true, forKey: Constants.Keys.isNotRequiredMockData)
             completion(nil)
         }
     }
-    
-    
-//    func load(completion: @escaping (Result<Data, Error>) -> Void) {
-//        
-//        if UserDefaults.standard.bool(forKey: Constants.Keys.isNotRequiredMockData) {
-//            
-//            DispatchQueue.global(qos: .background).async {
-//       
-//                guard FileManager.default.fileExists(atPath: self.URLToFilename.path)
-//                    else { completion(.failure(URLError(.fileDoesNotExist)))
-//                        return
-//                    }
-//
-//                do {
-//                     let data = try Data(contentsOf: self.URLToFilename)
-//                    
-//                    do {
-//                        try self.decodeFromJSON(jsonData: data)
-//                    } catch {
-//                        throw DataServiceError.cannotProcessData
-//                    }
-//                    
-//                    
-//                     completion(.success(data))
-//                } catch {
-//                    completion(.failure(error))
-//                }
-//            }
-//        } else {
-//            
-//            
-//        }
-//
-//    }
+
 }
 
 //MARK: - Private functions
@@ -137,11 +98,9 @@ private extension CarDataService {
     
     func loadMockData() {
         
-        print("loadmock data")
-        
         let car1 = CarModel(modelName: "Focus", year: Date(), manufacturer: "Ford", bodyStyle: .sedan, carClass: .c)
         let car2 = CarModel(modelName: "Camry", year: Date(), manufacturer: "Toyota", bodyStyle: .crossover, carClass: .d)
-        let car3 = CarModel(modelName: "Ram", year: Date(), manufacturer: "Dodge", bodyStyle: .truck, carClass: .f)
+        let car3 = CarModel(modelName: "Patriot", year: Date(), manufacturer: "UAZ", bodyStyle: .truck, carClass: .f)
         let car4 = CarModel(modelName: "Vesta", year: Date(), manufacturer: "Lada", bodyStyle: .hybrid, carClass: .b)
         
         cars.append(car1)
@@ -149,6 +108,31 @@ private extension CarDataService {
         cars.append(car3)
         cars.append(car4)
         
+    }
+    
+    func encodeToJSON() -> Data? {
+        
+        var arr = [CarModel]()
+        
+        for i in 0 ..< count {
+            arr.append(cars[i])
+        }
+        
+        return try? JSONEncoder().encode(arr)
+    }
+    
+    func decodeFromJSON(jsonData: Data) throws {
+        
+        do {
+            let cars =  try JSONDecoder().decode([CarModel].self, from: jsonData)
+            
+            for car in cars {
+                self.cars.append(car)
+            }
+            
+        } catch {
+            throw(error)
+        }
     }
 }
 
@@ -177,33 +161,6 @@ extension CarDataService {
             listenter?.synchronize(at: index)
         }
     }
-    
-    func encodeToJSON() -> Data? {
-        
-        var arr = [CarModel]()
-        
-        for i in 0 ..< count {
-            arr.append(cars[i])
-        }
-        
-        return try? JSONEncoder().encode(arr)
-    }
-    
-    func decodeFromJSON(jsonData: Data) throws {
-        
-        do {
-            let cars =  try JSONDecoder().decode([CarModel].self, from: jsonData)
-
-            for car in cars {
-                self.cars.append(car)
-            }
-
-        } catch {
-            throw(error)
-        }
-    }
-    
-
 }
 
 

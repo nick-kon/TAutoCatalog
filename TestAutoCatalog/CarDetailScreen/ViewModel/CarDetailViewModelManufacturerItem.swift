@@ -31,6 +31,5 @@ class CarDetailViewModelManufacturerItem: CarDetailViewModelItem {
     
     func isValid() -> Bool {
         return textValue.count > 0 ? true : false
-//        return false
     }
 }

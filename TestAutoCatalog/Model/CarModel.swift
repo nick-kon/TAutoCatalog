@@ -48,9 +48,7 @@ enum CarClass: String, Codable, StoredAsEnum, CaseIterable {
         case .s:
             return Constants.UI.CarClasses.s
         }
-        
     }
-
 }
 
 enum CarBodyStyle: String, Codable, StoredAsEnum, CaseIterable {
@@ -67,6 +65,7 @@ enum CarBodyStyle: String, Codable, StoredAsEnum, CaseIterable {
     case crossover = "crossover"
     case luxury = "luxury"
     case hybrid = "hybrid"
+    case hatchback = "hatchback"
     
     func toString() -> String {
         switch self {
@@ -94,6 +93,8 @@ enum CarBodyStyle: String, Codable, StoredAsEnum, CaseIterable {
             return Constants.UI.CarBodyStyle.van
         case .wagon:
             return Constants.UI.CarBodyStyle.wagon
+        case .hatchback:
+            return Constants.UI.CarBodyStyle.hatchback
         }
     }
     
@@ -105,4 +106,8 @@ struct CarModel: Codable {
     var manufacturer: String
     var bodyStyle: CarBodyStyle
     var carClass: CarClass
+    
+    static func getDefaultCarModel() -> CarModel {
+       return CarModel(modelName: "", year: Date(), manufacturer: "", bodyStyle: .convertible, carClass: .a)
+    }
 }

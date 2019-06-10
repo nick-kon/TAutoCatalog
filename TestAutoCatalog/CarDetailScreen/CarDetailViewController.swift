@@ -15,16 +15,11 @@ class CarDetailViewController: UIViewController, Storyboarded, AbleToShowMessage
     weak var coordinator: MainCoordinator!
     var viewModel: CarDetailViewModel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
         bindViewModel()
-    }
-
-    deinit {
-        print("Car detail VC deinit")
     }
 }
 
@@ -87,13 +82,8 @@ private extension CarDetailViewController {
             let indexSet = IndexSet(integer: section)
             self.tableView.reloadSections(indexSet, with: .automatic)
         }
-        
-        
     }
-    
-    func editViewModelItem(at index: Int) {
-        
-    }
+
 }
 
 //MARK: - UITableViewDataSource
@@ -154,6 +144,7 @@ extension CarDetailViewController: UITableViewDataSource {
                     
                     cell.configure(with: item)
                     cell.textfield.delegate = self
+                    cell.textfield.becomeFirstResponder()
                     return cell
                 }
             }
@@ -172,15 +163,19 @@ extension CarDetailViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension CarDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
+        switch viewModel.state {
+        case .editing:
+            return UISwipeActionsConfiguration(actions: [])
+        default:
         let editAction = UIContextualAction(style: .normal, title: Constants.UI.edit) { (action, view, performed) in
             
             self.viewModel.state = .editing(indexPath.section)
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
             performed(true)
         }
-        
-        return UISwipeActionsConfiguration(actions: [editAction])
+            editAction.backgroundColor = Theme.Colors.editActionBackgroundColor
+            return UISwipeActionsConfiguration(actions: [editAction])
+        }
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -192,6 +187,16 @@ extension CarDetailViewController: UITableViewDelegate {
         
         headerView.backgroundView?.backgroundColor = Theme.Colors.barTintColor
         headerView.textLabel?.textColor = Theme.Colors.tintColor
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch viewModel.state {
+        case .editing:
+            return
+        default:
+            viewModel.state = .editing(indexPath.section)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
     
 }

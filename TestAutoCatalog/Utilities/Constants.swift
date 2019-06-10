@@ -19,7 +19,11 @@ struct Constants {
         struct ErrorMessages {
             static let emptyModelname = "Enter model name."
             static let emptyManufacturer = "Enter manufacturer."
-            
+            static let cannotProcessData = "Ooops. Can't process data."
+            static let fileDoesNotExist = "File with data not found."
+            static let cannotWriteToFile = "File with data cannot be accessed."
+            static let unexpectedError = "Oops. Something went wrong :("
+            static let emptyList = "Empty list. Add some records!"
         }
         
         struct CarBodyStyle {
@@ -35,6 +39,7 @@ struct Constants {
             static let crossover = "Crossover."
             static let luxury = "Luxury."
             static let hybrid = "Hybrid / Electro."
+            static let hatchback = "Hatchback."
         }
         
         struct CarClasses {
@@ -68,6 +73,7 @@ struct Constants {
         static let done = "Done"
         static let save = "Save"
         static let select = "Select"
+        static let enter = "Enter"
     }
     
     struct Keys {

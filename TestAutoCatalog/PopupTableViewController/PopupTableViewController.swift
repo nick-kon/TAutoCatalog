@@ -11,9 +11,7 @@ import UIKit
 class PopupTableViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var contentView: UIView!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
     
     var carAttribute: StoredAsEnum!
@@ -27,10 +25,6 @@ class PopupTableViewController: UIViewController, Storyboarded {
         contentView.addRoundedCorners()
         viewModel = PopupViewModel(with: carAttribute)
         setupTableView()
-    }
-    
-    deinit {
-        print("popup TVC deinit")
     }
  }
 //MARK: - User interactions

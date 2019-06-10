@@ -17,7 +17,7 @@ class CarDetailViewModelCarBodyStyleItem: CarDetailViewModelItem {
         return Constants.UI.CarDetailScreen.SectionTitles.carType
     }
     
-    var textValue: String = ""
+    var textValue: String 
     
     var carAttributeEnumValue: StoredAsEnum {
         didSet {

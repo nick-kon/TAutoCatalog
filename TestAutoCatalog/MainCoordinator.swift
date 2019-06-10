@@ -15,17 +15,12 @@ class MainCoordinator: Coordinator {
     let dataService: CarDataService
     
     
-    //private vars:
-    
     private var currentCarIndex: Int = 0
     
     init(with navController: UINavigationController) {
         self.navigationController = navController
         dataService = CarDataService()
-    }
-    
-    deinit {
-        print("main coordinator deinit")
+
     }
     
     func start() {
@@ -43,7 +38,7 @@ class MainCoordinator: Coordinator {
     func addCar() {
         
         let vc = CarDetailViewController.instantiate()
-        let car = CarModel(modelName: "", year: Date(), manufacturer: "", bodyStyle: .convertible, carClass: .a)
+        let car = CarModel.getDefaultCarModel()
         let viewModel = CarDetailViewModel(car: car)
         viewModel.isAddingCar = true
         vc.viewModel = viewModel
@@ -65,7 +60,6 @@ class MainCoordinator: Coordinator {
         //prepare data
         let viewModel = CarDetailViewModel(car: dataService[index])
         vc.viewModel = viewModel
-
         
         vc.title = Constants.UI.CarDetailScreen.titleDetail
         
@@ -74,13 +68,15 @@ class MainCoordinator: Coordinator {
     
     func didUpdateDetailsForCar(car: CarModel) {
         dataService[currentCarIndex] = car
-        
         navigationController.popViewController(animated: true)
-        //need to update carsList
     }
     
     func didAddCar(car: CarModel) {
         dataService.append(car)
         navigationController.popViewController(animated: true)
+    }
+    
+    func autosaveToFile() {
+        dataService.save(completion: nil)
     }
 }

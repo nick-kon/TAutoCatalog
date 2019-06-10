@@ -25,9 +25,7 @@ class CarDetailTextfieldViewCell: UITableViewCell {
     func configure(with item: CarDetailViewModelItem) {
         
         textfield.text = item.textValue
-        textfield.placeholder = "Enter \(item.title)"
-       
-        textfield.becomeFirstResponder()
+        textfield.placeholder = Constants.UI.enter + " \(item.title.lowercased())"
     }
     
 }

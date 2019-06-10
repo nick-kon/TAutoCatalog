@@ -12,17 +12,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="PopupTableViewCell" customModule="TestAutoCatalog" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="346" height="83"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="PopupTableViewCell" customModule="TestAutoCatalog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="421" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="346" height="82.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="421" height="106.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpM-LF-eEs">
-                        <rect key="frame" x="30" y="0.0" width="306" height="50"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpM-LF-eEs">
+                        <rect key="frame" x="30" y="0.0" width="381" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="lzc-Xk-7Ke"/>
+                            <constraint firstAttribute="height" constant="44" id="s1c-N5-edI"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -31,7 +31,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="UpM-LF-eEs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="2fu-wk-EDj"/>
-                    <constraint firstAttribute="bottom" secondItem="UpM-LF-eEs" secondAttribute="bottom" id="2jO-IS-gPy"/>
+                    <constraint firstAttribute="bottom" secondItem="UpM-LF-eEs" secondAttribute="bottom" priority="750" id="2jO-IS-gPy"/>
                     <constraint firstItem="UpM-LF-eEs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CgL-75-fjG"/>
                     <constraint firstAttribute="trailing" secondItem="UpM-LF-eEs" secondAttribute="trailing" constant="10" id="VOH-re-nyn"/>
                 </constraints>
@@ -40,7 +40,7 @@
             <connections>
                 <outlet property="titleLabel" destination="UpM-LF-eEs" id="HcG-Oo-vJo"/>
             </connections>
-            <point key="canvasLocation" x="149.27536231884059" y="134.26339285714286"/>
+            <point key="canvasLocation" x="203.62318840579712" y="142.29910714285714"/>
         </tableViewCell>
     </objects>
 </document>

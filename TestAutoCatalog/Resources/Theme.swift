@@ -12,6 +12,7 @@ struct Theme {
     struct Colors {
         static let barTintColor = UIColor(named: "barTintColor")!
         static let tintColor = UIColor(named: "tintColor")!
+        static let editActionBackgroundColor = UIColor(named: "editActionColor")!
     }
     
     struct Fonts {

@@ -13,17 +13,13 @@ enum ListError: Error {
     case IndexOutOfRange
 }
 
-
 class ListNode<T> {
-    let id: UUID
     var value: T
     var pNext: ListNode<T>?
     
     init(value: T) {
-        id = UUID()
         self.value = value
     }
-    
 }
 
 class LinkedList<T>{
@@ -39,10 +35,6 @@ class LinkedList<T>{
         }
     }
     
-    deinit {
-        let str = String(describing: T.self)
-        print("Linked List deinit with type: " + str)
-    }
 //MARK: - API
 
     func append(_ value: T) {
@@ -61,19 +53,6 @@ class LinkedList<T>{
         }
         count += 1
     }
-    
-    func append(_ node: ListNode<T>) {
-    
-      if head == nil {
-            head = node
-        } else {
-            let lastNode = try! getNode(at: count - 1)
-            lastNode?.pNext = node
-        }
-        
-        count += 1
-    }
-    
 
     func delete(at index: Int) throws {
         
