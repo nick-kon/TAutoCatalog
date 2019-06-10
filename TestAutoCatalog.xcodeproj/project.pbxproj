@@ -12,6 +12,7 @@
 		951F0EB822AE2F0F0013D2B7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0EB722AE2F0F0013D2B7 /* RoundButton.swift */; };
 		951F0EBA22AE337D0013D2B7 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0EB922AE337C0013D2B7 /* UIViewExtensions.swift */; };
 		951F0EBC22AE391D0013D2B7 /* RoundedCornersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0EBB22AE391D0013D2B7 /* RoundedCornersButton.swift */; };
+		951F0EBE22AE6C110013D2B7 /* Georgia Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 951F0EBD22AE6C100013D2B7 /* Georgia Bold.ttf */; };
 		95225CB722ACB83E00CCF6AC /* DataServiceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */; };
 		95225CB922ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */; };
 		952E18A022AB746900980910 /* PopupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E189F22AB746900980910 /* PopupTableViewController.swift */; };
@@ -57,6 +58,7 @@
 		95A5BBEE22AA8F62004CC7CE /* CarDetailViewModelCarClassItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBED22AA8F62004CC7CE /* CarDetailViewModelCarClassItem.swift */; };
 		95A5BBF022AA8FA8004CC7CE /* CarDetailViewModelCarBodyStyleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBEF22AA8FA8004CC7CE /* CarDetailViewModelCarBodyStyleItem.swift */; };
 		95A5BBF222AA9018004CC7CE /* CarDetailViewModelManufacturerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5BBF122AA9018004CC7CE /* CarDetailViewModelManufacturerItem.swift */; };
+		95DC07B722AE9BCE00DF65C5 /* logoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 95DC07B622AE9BCE00DF65C5 /* logoImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,7 @@
 		951F0EB722AE2F0F0013D2B7 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		951F0EB922AE337C0013D2B7 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		951F0EBB22AE391D0013D2B7 /* RoundedCornersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersButton.swift; sourceTree = "<group>"; };
+		951F0EBD22AE6C100013D2B7 /* Georgia Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Georgia Bold.ttf"; sourceTree = "<group>"; };
 		95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceListener.swift; sourceTree = "<group>"; };
 		95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbleToShowErrorMessage.swift; sourceTree = "<group>"; };
 		952E189F22AB746900980910 /* PopupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTableViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		95A5BBED22AA8F62004CC7CE /* CarDetailViewModelCarClassItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewModelCarClassItem.swift; sourceTree = "<group>"; };
 		95A5BBEF22AA8FA8004CC7CE /* CarDetailViewModelCarBodyStyleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewModelCarBodyStyleItem.swift; sourceTree = "<group>"; };
 		95A5BBF122AA9018004CC7CE /* CarDetailViewModelManufacturerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewModelManufacturerItem.swift; sourceTree = "<group>"; };
+		95DC07B622AE9BCE00DF65C5 /* logoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,8 @@
 				9534660922AA39DE00A0503F /* Assets.xcassets */,
 				951F0EB022AE0EBB0013D2B7 /* Colors.xcassets */,
 				951F0EB422AE22170013D2B7 /* Theme.swift */,
+				95DC07B622AE9BCE00DF65C5 /* logoImage.png */,
+				951F0EBD22AE6C100013D2B7 /* Georgia Bold.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -442,11 +448,13 @@
 				95A5BBCD22AA5ADB004CC7CE /* CarsListScreenViewController.storyboard in Resources */,
 				9596C83922AAFBB800FA35D1 /* CarDetailDatePickerViewCell.xib in Resources */,
 				9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */,
+				951F0EBE22AE6C110013D2B7 /* Georgia Bold.ttf in Resources */,
 				951F0EB122AE0EBB0013D2B7 /* Colors.xcassets in Resources */,
 				952E18A222AB748100980910 /* PopupTableViewController.storyboard in Resources */,
 				956AAB0E22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib in Resources */,
 				952E18AC22ABB59C00980910 /* PopupTableViewCell.xib in Resources */,
 				9534660A22AA39DE00A0503F /* Assets.xcassets in Resources */,
+				95DC07B722AE9BCE00DF65C5 /* logoImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
