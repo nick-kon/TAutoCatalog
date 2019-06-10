@@ -19,9 +19,12 @@ class PopupTableViewController: UIViewController, Storyboarded {
     var carAttribute: StoredAsEnum!
     var viewModel: PopupViewModel!
     weak var delegate: TableViewPickerDelegate?
+    var titleText: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = titleText
+        contentView.addRoundedCorners()
         viewModel = PopupViewModel(with: carAttribute)
         setupTableView()
     }
@@ -45,6 +48,8 @@ private extension PopupTableViewController {
         
         let nib = UINib(nibName: PopupTableViewCell.identifier, bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: PopupTableViewCell.identifier)
+        
+        tableView.addRoundedCorners()
         
         tableView.dataSource = self
         tableView.delegate = self

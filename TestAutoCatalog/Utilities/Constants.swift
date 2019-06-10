@@ -11,6 +11,8 @@ import Foundation
 struct Constants {
     
     static let minimumYearOfManufacturing: Int = 1955
+    static let filenameForJson = "jsondata.txt"
+    static let delaySimulated: Int = 5
     
     struct UI {
         
@@ -65,5 +67,11 @@ struct Constants {
         static let delete = "Delete"
         static let done = "Done"
         static let save = "Save"
+        static let select = "Select"
+    }
+    
+    struct Keys {
+        static let isHiddenHelpScreen = "isHiddenHelpScreen"
+        static let isNotRequiredMockData = "isNotRequiredMockData"
     }
 }

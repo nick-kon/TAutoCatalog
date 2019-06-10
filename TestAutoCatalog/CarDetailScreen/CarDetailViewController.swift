@@ -133,11 +133,13 @@ extension CarDetailViewController: UITableViewDataSource {
                 
                 if let carClassItem = item as? CarDetailViewModelCarClassItem {
                     carAttribute = carClassItem.carAttributeEnumValue
+                    
                 } else {
                     let bodyStyleItem = item as! CarDetailViewModelCarBodyStyleItem
                     carAttribute = bodyStyleItem.carAttributeEnumValue
                 }
                 
+                vc.titleText = Constants.UI.select + " \(item.title.lowercased()):"
                 vc.carAttribute = carAttribute
                 vc.delegate = self
                 present(vc, animated: true, completion: nil)
