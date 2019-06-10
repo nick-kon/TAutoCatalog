@@ -11,6 +11,7 @@ import UIKit
 class CarsListScreenViewController: UIViewController, Storyboarded {
     @IBOutlet weak var HelpViewContentView: UIView!
     
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var tableFooterLabel: UILabel!
     @IBOutlet weak var tableFooterView: UIView!
     @IBOutlet weak var activityInicator: UIActivityIndicatorView!
@@ -23,9 +24,9 @@ class CarsListScreenViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupTableView()
         setupHelpScreen()
+
+        setupTableView()
         bindViewModel()
         // Do any additional setup after loading the view.
     }
@@ -46,6 +47,7 @@ private extension CarsListScreenViewController {
             UserDefaults.standard.set(true, forKey: Constants.Keys.isHiddenHelpScreen)
             self.helpView.removeFromSuperview()
             self.view.removeVisualEffect()
+            self.removeLogoImageView()
         }
     }
 }
@@ -64,7 +66,21 @@ private extension CarsListScreenViewController {
             helpView.frame = view.bounds
             HelpViewContentView.addRoundedCorners()
             view.addSubview(helpView)
+        } else {
+            removeLogoImageView()
         }
+    }
+    
+    func removeLogoImageView() {
+        
+        UIView.animate(withDuration: 2, delay: 0.5, options: [.curveEaseIn], animations: {
+            
+            let newX = self.logoImageView.bounds.width
+            self.logoImageView.transform = CGAffineTransform(translationX: 0 - newX, y: 0)
+        }, completion: { (finished) in
+            self.logoImageView.removeFromSuperview()
+        })
+        
     }
     
     func bindViewModel() {

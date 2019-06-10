@@ -65,6 +65,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImage" translatesAutoresizingMaskIntoConstraints="NO" id="FDh-CM-nKp">
+                                <rect key="frame" x="57" y="353" width="300" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="OJu-Lp-NC5"/>
+                                    <constraint firstAttribute="width" constant="300" id="egR-Lz-UOt"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-TW-xpc" customClass="RoundButton" customModule="TestAutoCatalog" customModuleProvider="target">
                                 <rect key="frame" x="319" y="767" width="65" height="65"/>
                                 <color key="backgroundColor" name="barTintColor"/>
@@ -91,8 +99,10 @@
                             <constraint firstItem="AaE-I7-hbU" firstAttribute="centerY" secondItem="Fjy-wc-wax" secondAttribute="centerY" id="FTa-VB-ccj"/>
                             <constraint firstItem="Rzg-us-xsV" firstAttribute="bottom" secondItem="MgQ-TW-xpc" secondAttribute="bottom" constant="30" id="GO8-CB-ICw"/>
                             <constraint firstItem="Rzg-us-xsV" firstAttribute="trailing" secondItem="Fjy-wc-wax" secondAttribute="trailing" id="NEH-MB-eua"/>
+                            <constraint firstItem="FDh-CM-nKp" firstAttribute="centerX" secondItem="Fjy-wc-wax" secondAttribute="centerX" id="NzU-mk-kOx"/>
                             <constraint firstItem="MgQ-TW-xpc" firstAttribute="trailing" secondItem="Rzg-us-xsV" secondAttribute="trailing" constant="-30" id="OHg-ad-aNH"/>
                             <constraint firstItem="AaE-I7-hbU" firstAttribute="centerX" secondItem="Fjy-wc-wax" secondAttribute="centerX" id="XJn-Uc-4Sc"/>
+                            <constraint firstItem="FDh-CM-nKp" firstAttribute="centerY" secondItem="Fjy-wc-wax" secondAttribute="centerY" id="bts-NQ-v9A"/>
                             <constraint firstItem="Fjy-wc-wax" firstAttribute="leading" secondItem="Rzg-us-xsV" secondAttribute="leading" id="jFg-TP-Ezo"/>
                             <constraint firstItem="Fjy-wc-wax" firstAttribute="top" secondItem="Rzg-us-xsV" secondAttribute="top" id="kMv-LB-YRq"/>
                             <constraint firstItem="Rzg-us-xsV" firstAttribute="bottom" secondItem="Fjy-wc-wax" secondAttribute="bottom" id="pOi-Vo-6vW"/>
@@ -103,6 +113,7 @@
                         <outlet property="HelpViewContentView" destination="8kO-qp-9PT" id="hW3-F4-Fyr"/>
                         <outlet property="activityInicator" destination="AaE-I7-hbU" id="NU8-Zc-6fi"/>
                         <outlet property="helpView" destination="cPZ-m7-lxq" id="0vL-XP-iU2"/>
+                        <outlet property="logoImageView" destination="FDh-CM-nKp" id="89W-e8-2M8"/>
                         <outlet property="tableFooterLabel" destination="QV2-l7-axR" id="cHR-Ae-1xf"/>
                         <outlet property="tableFooterView" destination="RWz-es-5MR" id="3z0-F2-yUF"/>
                         <outlet property="tableView" destination="Fjy-wc-wax" id="RDf-cJ-goI"/>
@@ -157,7 +168,7 @@
                                             <color key="textColor" name="tintColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe right to edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBG-Cp-Ptk">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe right or tap to edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBG-Cp-Ptk">
                                             <rect key="frame" x="0.0" y="169.5" width="263" height="46.5"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                             <color key="textColor" name="tintColor"/>
@@ -204,6 +215,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logoImage" width="300" height="150"/>
         <namedColor name="barTintColor">
             <color red="0.062745098039215685" green="0.25098039215686274" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
