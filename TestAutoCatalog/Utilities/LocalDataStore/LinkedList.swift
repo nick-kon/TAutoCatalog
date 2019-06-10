@@ -59,7 +59,7 @@ class LinkedList<T>{
         guard index < count, index >= 0 else { throw ListError.IndexOutOfRange }
         
         if index == 0 {
-            head = nil
+            head = head?.pNext
         } else {
             let prevNode = try! getNode(at: index - 1)
             let deletedNode = try! getNode(at: index)
