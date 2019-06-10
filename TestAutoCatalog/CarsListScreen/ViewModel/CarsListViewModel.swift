@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 struct CarViewModel {
     let modelName: String
     let year: Date
@@ -32,12 +30,21 @@ class CarsListViewModel {
         case populated
     }
     
+    
+    
     let dataService: CarDataService!
     var state: State {
         didSet {
             switch state {
             case .loading:
-                print("loading")
+                isNeededActivityIndicator.value = true
+//                print("loading")
+            case .error(let error):
+                titleInFooterView.value = error.localizedDescription
+                print(error.localizedDescription)
+            case .populated:
+                isNeededActivityIndicator.value = false
+                reloadView?()
             default:
                 print("default")
             }
@@ -63,6 +70,12 @@ class CarsListViewModel {
         }
     }
     
+// Binding
+    var isNeededActivityIndicator = Box(true)
+    var titleInFooterView = Box("")
+    var reloadView: (() -> Void)?
+    
+    
     init(with dataService: CarDataService) {
         state = .loading
         self.dataService = dataService
@@ -83,17 +96,37 @@ class CarsListViewModel {
             _currentCars.append(CarViewModel(with: carModel))
         }
     }
+    
 }
 
 //MARK: - Private functions
 private extension CarsListViewModel {
     func fetchData() {
         
-        dataService.loadMockData()
+        dataService.load { [weak self] (error) in
+            if let error = error {
+                self?.state = .error(error)
+            } else {
+                self?.synchronizeAll()
+                self?.state = .populated
+            }
+        }
         
-        synchronizeAll()
         
-        state = .populated
+//        dataService.load { (result) in
+//            switch result {
+//            case .success(let data):
+//                print(data)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+        
+    //    dataService.export()
+//
+//        synchronizeAll()
+//
+//        state = .populated
     }
     
 

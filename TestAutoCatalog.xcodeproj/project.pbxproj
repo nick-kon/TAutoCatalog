@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951F0EB122AE0EBB0013D2B7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 951F0EB022AE0EBB0013D2B7 /* Colors.xcassets */; };
 		95225CB722ACB83E00CCF6AC /* DataServiceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */; };
 		95225CB922ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */; };
 		952E18A022AB746900980910 /* PopupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E189F22AB746900980910 /* PopupTableViewController.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		951F0EB022AE0EBB0013D2B7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceListener.swift; sourceTree = "<group>"; };
 		95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbleToShowErrorMessage.swift; sourceTree = "<group>"; };
 		952E189F22AB746900980910 /* PopupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTableViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				9534660922AA39DE00A0503F /* Assets.xcassets */,
+				951F0EB022AE0EBB0013D2B7 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				95A5BBCD22AA5ADB004CC7CE /* CarsListScreenViewController.storyboard in Resources */,
 				9596C83922AAFBB800FA35D1 /* CarDetailDatePickerViewCell.xib in Resources */,
 				9534660D22AA39DE00A0503F /* LaunchScreen.storyboard in Resources */,
+				951F0EB122AE0EBB0013D2B7 /* Colors.xcassets in Resources */,
 				952E18A222AB748100980910 /* PopupTableViewController.storyboard in Resources */,
 				956AAB0E22AAD3310005A6F4 /* CarDetailTextfieldViewCell.xib in Resources */,
 				952E18AC22ABB59C00980910 /* PopupTableViewCell.xib in Resources */,
