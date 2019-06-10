@@ -25,7 +25,7 @@ class CarsListViewModel {
     
     enum State {
         case loading
-        case error(Error)
+        case error(DataServiceError)
         case empty
         case populated
     }
@@ -38,15 +38,33 @@ class CarsListViewModel {
             switch state {
             case .loading:
                 isNeededActivityIndicator.value = true
+                print(".loading")
 //                print("loading")
             case .error(let error):
-                titleInFooterView.value = error.localizedDescription
-                print(error.localizedDescription)
+                var text = ""
+                switch error {
+                case .cannotProcessData:
+                    text = "cannot process data"
+                case .fileDoesNotExists:
+                    text = "file does not exists"
+                case .cannotWriteToFile:
+                    text = "cannot write to file"
+                case .unexpectedError:
+                    text = "unexpected error"
+                }
+                
+                titleInFooterView.value = text
+                isNeededActivityIndicator.value = false
+
             case .populated:
+                print(".populated")
+                isNeededActivityIndicator.value = false
+                titleInFooterView.value = ""
+                reloadView?()
+            case .empty:
                 isNeededActivityIndicator.value = false
                 reloadView?()
-            default:
-                print("default")
+                titleInFooterView.value = "Empty list. Add some records"
             }
         }
     }
@@ -77,6 +95,9 @@ class CarsListViewModel {
     
     
     init(with dataService: CarDataService) {
+        
+        print("cars list view model init")
+        
         state = .loading
         self.dataService = dataService
         _currentCars = LinkedList<CarViewModel>()
@@ -84,9 +105,18 @@ class CarsListViewModel {
         fetchData()
     }
     
+    deinit {
+        print("cars list view model deinit")
+    }
+    
+    //MARK: - Public functions
     func synchronizeEntity(at index: Int) {
         
             currentCars[index] =  CarViewModel(with: dataService[index])
+    }
+    
+    func delete(at index: Int) {
+        dataService.delete(at: index)
     }
     
     func synchronizeAll() {
@@ -95,8 +125,9 @@ class CarsListViewModel {
             let carModel = dataService[i]
             _currentCars.append(CarViewModel(with: carModel))
         }
+        
+       state =  dataService.count > 0 ?  .populated : .empty
     }
-    
 }
 
 //MARK: - Private functions
@@ -111,23 +142,6 @@ private extension CarsListViewModel {
                 self?.state = .populated
             }
         }
-        
-        
-//        dataService.load { (result) in
-//            switch result {
-//            case .success(let data):
-//                print(data)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-        
-    //    dataService.export()
-//
-//        synchronizeAll()
-//
-//        state = .populated
     }
-    
 
 }
