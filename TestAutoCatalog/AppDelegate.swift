@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        print("application did enter background")
+   //     coordinator.autosaveToFile()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -45,14 +47,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        print("application will terminate")
+   //     coordinator.autosaveToFile()
     }
 
 
 }
 //MARK: - Private functions
 private extension AppDelegate {
-    func setupCoordinator() {
+    func setupNavController() {
         navController = UINavigationController()
+        navController.navigationBar.barTintColor = Theme.Colors.barTintColor
+        navController.navigationBar.tintColor = Theme.Colors.tintColor
+        
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: Theme.Colors.tintColor,
+            NSAttributedString.Key.font: Theme.Fonts.navBarTitleFont
+        ]
+        navController.navigationBar.titleTextAttributes = attrs
+        
+    }
+    
+    func setupCoordinator() {
+        setupNavController()
         coordinator = MainCoordinator(with: navController)
         coordinator.start()
     }

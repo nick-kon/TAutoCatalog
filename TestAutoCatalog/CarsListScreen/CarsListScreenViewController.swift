@@ -9,6 +9,7 @@
 import UIKit
 
 class CarsListScreenViewController: UIViewController, Storyboarded {
+    @IBOutlet weak var HelpViewContentView: UIView!
     
     @IBOutlet weak var tableFooterLabel: UILabel!
     @IBOutlet weak var tableFooterView: UIView!
@@ -53,6 +54,7 @@ private extension CarsListScreenViewController {
         }) { (success) in
             UserDefaults.standard.set(true, forKey: Constants.Keys.isHiddenHelpScreen)
             self.helpView.removeFromSuperview()
+            self.view.removeVisualEffect()
         }
         
     }
@@ -68,10 +70,12 @@ private extension CarsListScreenViewController {
     }
     
     func setupHelpScreen() {
-        if (!UserDefaults.standard.bool(forKey: Constants.Keys.isHiddenHelpScreen)) {
+       // if (!UserDefaults.standard.bool(forKey: Constants.Keys.isHiddenHelpScreen)) {
+            view.addDarkBlurEffect()
             helpView.frame = view.bounds
+            HelpViewContentView.addRoundedCorners()
             view.addSubview(helpView)
-        }
+      //  }
     }
     
     func bindViewModel() {

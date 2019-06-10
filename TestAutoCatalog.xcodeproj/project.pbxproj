@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		951F0EB122AE0EBB0013D2B7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 951F0EB022AE0EBB0013D2B7 /* Colors.xcassets */; };
+		951F0EB522AE22170013D2B7 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0EB422AE22170013D2B7 /* Theme.swift */; };
+		951F0EB822AE2F0F0013D2B7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0EB722AE2F0F0013D2B7 /* RoundButton.swift */; };
+		951F0EBA22AE337D0013D2B7 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0EB922AE337C0013D2B7 /* UIViewExtensions.swift */; };
+		951F0EBC22AE391D0013D2B7 /* RoundedCornersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F0EBB22AE391D0013D2B7 /* RoundedCornersButton.swift */; };
 		95225CB722ACB83E00CCF6AC /* DataServiceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */; };
 		95225CB922ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */; };
 		952E18A022AB746900980910 /* PopupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E189F22AB746900980910 /* PopupTableViewController.swift */; };
@@ -67,6 +71,10 @@
 
 /* Begin PBXFileReference section */
 		951F0EB022AE0EBB0013D2B7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		951F0EB422AE22170013D2B7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		951F0EB722AE2F0F0013D2B7 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		951F0EB922AE337C0013D2B7 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		951F0EBB22AE391D0013D2B7 /* RoundedCornersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersButton.swift; sourceTree = "<group>"; };
 		95225CB622ACB83E00CCF6AC /* DataServiceListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceListener.swift; sourceTree = "<group>"; };
 		95225CB822ACF2EE00CCF6AC /* AbleToShowErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbleToShowErrorMessage.swift; sourceTree = "<group>"; };
 		952E189F22AB746900980910 /* PopupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTableViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		951F0EB622AE2EC30013D2B7 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				951F0EB722AE2F0F0013D2B7 /* RoundButton.swift */,
+				951F0EBB22AE391D0013D2B7 /* RoundedCornersButton.swift */,
+			);
+			path = "Custom Controls";
+			sourceTree = "<group>";
+		};
 		952E189E22AB742800980910 /* PopupTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +228,7 @@
 		95A5BBB722AA3D53004CC7CE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				951F0EB622AE2EC30013D2B7 /* Custom Controls */,
 				95A5BBD522AA6875004CC7CE /* Extensions */,
 				95A5BBC322AA578D004CC7CE /* Protocols */,
 				95A5BBBA22AA3DD2004CC7CE /* LocalDataStore */,
@@ -225,6 +243,7 @@
 			children = (
 				9534660922AA39DE00A0503F /* Assets.xcassets */,
 				951F0EB022AE0EBB0013D2B7 /* Colors.xcassets */,
+				951F0EB422AE22170013D2B7 /* Theme.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -295,6 +314,7 @@
 				95A5BBD622AA6889004CC7CE /* UITableViewCellExtensions.swift */,
 				95A5BBDA22AA7AE0004CC7CE /* DateExtensions.swift */,
 				952E18B122AC370300980910 /* UITextfieldExtensions.swift */,
+				951F0EB922AE337C0013D2B7 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -453,21 +473,25 @@
 				95A5BBBC22AA3E0B004CC7CE /* LinkedList.swift in Sources */,
 				95A5BBE422AA8AB0004CC7CE /* CarDetailViewModel.swift in Sources */,
 				956AAB0D22AAD3310005A6F4 /* CarDetailTextfieldViewCell.swift in Sources */,
+				951F0EB522AE22170013D2B7 /* Theme.swift in Sources */,
 				95A5BBC022AA5149004CC7CE /* CarDataService.swift in Sources */,
 				95A5BBF022AA8FA8004CC7CE /* CarDetailViewModelCarBodyStyleItem.swift in Sources */,
 				9534660322AA39B600A0503F /* AppDelegate.swift in Sources */,
 				952E18AB22ABB59C00980910 /* PopupTableViewCell.swift in Sources */,
 				952E18B222AC370300980910 /* UITextfieldExtensions.swift in Sources */,
 				95A5BBDE22AA7D84004CC7CE /* CarDetailViewController.swift in Sources */,
+				951F0EBC22AE391D0013D2B7 /* RoundedCornersButton.swift in Sources */,
 				952E18A422AB7E5700980910 /* StoredAsEnum.swift in Sources */,
 				95A5BBEC22AA8F0E004CC7CE /* CarDetailViewModelYearItem.swift in Sources */,
 				95A5BBEE22AA8F62004CC7CE /* CarDetailViewModelCarClassItem.swift in Sources */,
 				95A5BBCB22AA5A9C004CC7CE /* CarsListScreenViewController.swift in Sources */,
 				95A5BBF222AA9018004CC7CE /* CarDetailViewModelManufacturerItem.swift in Sources */,
 				95A5BBC522AA57A3004CC7CE /* Storyboarded.swift in Sources */,
+				951F0EB822AE2F0F0013D2B7 /* RoundButton.swift in Sources */,
 				95A5BBE622AA8C9B004CC7CE /* CarDetailViewModelItem.swift in Sources */,
 				95A5BBD922AA736D004CC7CE /* Box.swift in Sources */,
 				95A5BBC722AA5869004CC7CE /* Coordinator.swift in Sources */,
+				951F0EBA22AE337D0013D2B7 /* UIViewExtensions.swift in Sources */,
 				95A5BBD022AA66F6004CC7CE /* CarsListViewModel.swift in Sources */,
 				952E18A022AB746900980910 /* PopupTableViewController.swift in Sources */,
 				952E18B022AC241500980910 /* YearPickerDelegate.swift in Sources */,
