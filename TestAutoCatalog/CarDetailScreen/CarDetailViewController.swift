@@ -126,6 +126,8 @@ extension CarDetailViewController: UITableViewDataSource {
                 }
             case .carClass, .carType:
                 
+                view.addDarkBlurEffect()
+                
                 let vc = PopupTableViewController.instantiate()
                 var carAttribute: StoredAsEnum
                 
@@ -182,15 +184,25 @@ extension CarDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         return UISwipeActionsConfiguration(actions: [])
     }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+        
+        headerView.backgroundView?.backgroundColor = Theme.Colors.barTintColor
+        headerView.textLabel?.textColor = Theme.Colors.tintColor
+    }
+    
 }
 
 //MARK: - TableViewPickerDelegate
 extension CarDetailViewController: TableViewPickerDelegate {
     func didSelectEnumValue(_ value: StoredAsEnum) {
+        view.removeVisualEffect()
         viewModel.didSelectEnumValue(value)
     }
     
     func cancelSelection() {
+        view.removeVisualEffect()
         viewModel.state = .endEditing(viewModel.editingItemIndex!)
     }
 }
